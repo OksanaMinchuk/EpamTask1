@@ -2,14 +2,12 @@ package by.epam.minchuk.task1.entity;
 
 public class Developer extends Engineer {
 
+    public enum DeveloperType {
+        FRONT_END, BACK_END
+    }
+
     private DeveloperType developerType;
     private String skill;
-
-    private static int countDeveloper = 0;
-
-    {
-        countDeveloper++;
-    }
 
     public Developer() {
     }
@@ -41,10 +39,6 @@ public class Developer extends Engineer {
         this.skill = skill;
     }
 
-    public int getCountDeveloper() {
-        return countDeveloper;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,9 +61,9 @@ public class Developer extends Engineer {
 
     @Override
     public String toString() {
-        return "Developer {" +
-                "developerType=" + developerType +
+        return "Developer {" + super.toString() +
+                ", developerType=" + developerType +
                 ", skill='" + skill + '\''
-                 + super.toString();
+                 + "}";
     }
 }

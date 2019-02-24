@@ -1,8 +1,11 @@
 package by.epam.minchuk.task1.entity;
 
-import by.epam.minchuk.task1.exception.IncorrectArgumentExeption;
-
-import java.util.Arrays;
+/**
+ * Class {@code ProjectManager} is a subclass of Employee
+ *
+ * @autor Oksana Minchuk
+ * @version 1.0 17.02.2019
+ */
 
 public class ProjectManager extends Employee {
 
@@ -44,7 +47,7 @@ public class ProjectManager extends Employee {
 
     @Override
     public String toString() {
-        return "ProjectManager{" +
-                "project='" + project + '\'' + super.toString();
+        return "ProjectManager {" + super.toString() +
+                "project='" + project + '\'' + "}";
     }
 }

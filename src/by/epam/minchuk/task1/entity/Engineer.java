@@ -1,15 +1,26 @@
 package by.epam.minchuk.task1.entity;
 
+/**
+ * Class {@code Engineer} is a subclass of Employee and a superclass for Developer and Tester
+ *
+ * @autor Oksana Minchuk
+ * @version 1.0 17.02.2019
+ */
+
 public class Engineer extends Employee{
+
+    public enum EngineerLevelType {
+        JUNIOR, MIDDLE, SENIOR
+    }
 
     private EngineerLevelType level;
 
     public Engineer() {
     }
 
-    public Engineer(String name, String surname, int salaryPerHour, EngineerLevelType levelType) {
+    public Engineer(String name, String surname, int salaryPerHour, EngineerLevelType level) {
         super(name, surname, salaryPerHour);
-        this.level = levelType;
+        this.level = level;
     }
 
     public EngineerLevelType getLevel() {
@@ -40,6 +51,6 @@ public class Engineer extends Employee{
 
     @Override
     public String toString() {
-        return  ", level=" + level + super.toString();
+        return super.toString() + "level=" + level;
     }
 }

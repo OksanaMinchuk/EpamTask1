@@ -2,19 +2,17 @@ package by.epam.minchuk.task1.entity;
 
 public class Tester extends Engineer {
 
-    private TesterType testerType;
-
-    public static int countTester = 0;
-
-    {
-        countTester++;
+    public enum TesterType {
+        AUTOMATION, MANUAL
     }
+
+    private TesterType testerType;
 
     public Tester() {
     }
 
-    public Tester(String name, String surname, int salaryPerHour, EngineerLevelType levelType, TesterType testerType) {
-        super(name, surname, salaryPerHour, levelType);
+    public Tester(String name, String surname, int salaryPerHour, EngineerLevelType level, TesterType testerType) {
+        super(name, surname, salaryPerHour, level);
         this.testerType = testerType;
     }
 
@@ -24,10 +22,6 @@ public class Tester extends Engineer {
 
     public void setTesterType(TesterType testerType) {
         this.testerType = testerType;
-    }
-
-    public static int getCountTester() {
-        return countTester;
     }
 
     @Override
@@ -50,7 +44,7 @@ public class Tester extends Engineer {
 
     @Override
     public String toString() {
-        return "Tester {" +
-                "testerType=" + testerType + super.toString();
+        return "Tester {" + super.toString() +
+                ", testerType=" + testerType + "}";
     }
 }

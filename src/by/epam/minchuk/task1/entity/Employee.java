@@ -1,12 +1,12 @@
 package by.epam.minchuk.task1.entity;
 
-import by.epam.minchuk.task1.exception.IncorrectArgumentExeption;
+import by.epam.minchuk.task1.exception.MyIncorrectDataException;
 
 /**
  * Class {@code Employee} is a superclass for all emloyees of IT-Company
  *
  * @autor Oksana Minchuk
- * @version 17.02.2019
+ * @version 1.0 17.02.2019
 */
 
 
@@ -20,35 +20,41 @@ public class Employee {
     }
 
     public Employee(String name, String surname, int salaryPerHour) {
-        this.name = name;
-        this.surname = surname;
-        this.salaryPerHour = salaryPerHour;
+        if (name != null && name != "" && surname != null && surname != "" && salaryPerHour > 0) {
+            this.name = name;
+            this.surname = surname;
+            this.salaryPerHour = salaryPerHour;
+        }
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws MyIncorrectDataException {
+        if (name != null && name != "") {
+            this.name = name;
+        } throw new MyIncorrectDataException("Incorrect name value");
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSurname(String surname) throws MyIncorrectDataException {
+        if (surname != null && surname != "") {
+            this.surname = surname;
+        } throw new MyIncorrectDataException("Incorrect surname value");
     }
 
     public int getSalaryPerHour() {
         return salaryPerHour;
     }
 
-    public void setSalaryPerHour(int salaryPerHour) throws IncorrectArgumentExeption {
+    public void setSalaryPerHour(int salaryPerHour) throws MyIncorrectDataException {
         if (salaryPerHour > 0) {
             this.salaryPerHour = salaryPerHour;
-        } else throw new IncorrectArgumentExeption("Incorrect salaryPerHour value");
+        } else throw new MyIncorrectDataException("Incorrect salaryPerHour value");
     }
 
     @Override
@@ -73,8 +79,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return  ", name='" + name + '\'' +
+        return  " name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", salaryPerHour=" + salaryPerHour + "} ";
+                ", salaryPerHour=" + salaryPerHour + ", ";
     }
 }
