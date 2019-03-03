@@ -1,5 +1,6 @@
-package by.epam.minchuk.task1.model.entity;
+package by.epam.minchuk.task1.model.logic;
 
+import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
 import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
 import by.epam.minchuk.task1.model.logic.sorter.Sorter;
@@ -9,7 +10,7 @@ import org.junit.Test;
 
 public class SorterTest {
 
-    Employee [] actualEmployees;
+    Employee[] actualEmployees;
 
     @Before
     public void init() throws ITCompanyNullPointerException {

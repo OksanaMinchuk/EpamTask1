@@ -1,6 +1,6 @@
-package by.epam.minchuk.task1.model.entity;
+package by.epam.minchuk.task1.model.logic;
 
-import by.epam.minchuk.task1.model.entity.creator.TypeEmployee;
+import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
 import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
 import by.epam.minchuk.task1.model.logic.finder.Finder;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class FinderTest {
 
-    Employee [] actualEmployees;
+    Employee[] actualEmployees;
 
     @Before
     public void init() throws ITCompanyNullPointerException {

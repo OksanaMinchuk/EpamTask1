@@ -9,7 +9,7 @@ import by.epam.minchuk.task1.model.exception.EngineerDataWrongException;
  * @version 1.0 17.02.2019
  */
 
-public class Engineer extends Employee{
+public class Engineer extends Employee {
 
     public enum EngineerLevelType {
         JUNIOR, MIDDLE, SENIOR

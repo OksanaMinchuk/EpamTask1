@@ -1,7 +1,7 @@
 package by.epam.minchuk.task1.model.logic.finder;
 
 import by.epam.minchuk.task1.model.entity.Employee;
-import by.epam.minchuk.task1.model.entity.creator.TypeEmployee;
+import by.epam.minchuk.task1.model.creator.TypeEmployee;
 import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
 
 import java.util.ArrayList;

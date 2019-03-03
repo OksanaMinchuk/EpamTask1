@@ -3,8 +3,8 @@ package by.epam.minchuk.task1.controller;
 
 import by.epam.minchuk.task1.model.entity.Employee;
 import by.epam.minchuk.task1.model.entity.Team;
-import by.epam.minchuk.task1.model.entity.creator.CompanyCreator;
-import by.epam.minchuk.task1.model.entity.creator.TypeEmployee;
+import by.epam.minchuk.task1.model.creator.CompanyCreator;
+import by.epam.minchuk.task1.model.creator.TypeEmployee;
 import by.epam.minchuk.task1.model.exception.CompanyCreatorNullPointerException;
 import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
 import by.epam.minchuk.task1.model.exception.SorterNullPointerException;

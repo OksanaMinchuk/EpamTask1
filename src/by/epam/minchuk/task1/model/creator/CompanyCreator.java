@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.entity.creator;
+package by.epam.minchuk.task1.model.creator;
 
 import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.CompanyCreatorNullPointerException;
