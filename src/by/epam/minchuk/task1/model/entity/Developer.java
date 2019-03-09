@@ -36,6 +36,13 @@ public class Developer extends Engineer {
         }
     }
 
+    public Developer(Developer developer) {
+        super(developer);
+        this.developerType = developer.developerType;
+        this.skill = developer.skill;
+    }
+
+
     public DeveloperType getDeveloperType() {
         return developerType;
     }

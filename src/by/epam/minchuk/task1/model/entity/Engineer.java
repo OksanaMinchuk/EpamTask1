@@ -25,6 +25,11 @@ public class Engineer extends Employee {
         this.level = level;
     }
 
+    public Engineer(Engineer engineer) {
+        super(engineer);
+        this.level = engineer.level;
+    }
+
     public EngineerLevelType getLevel() {
         return level;
     }

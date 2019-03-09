@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.logic.sorter;
+package by.epam.minchuk.task1.model.logic;
 
 import by.epam.minchuk.task1.model.entity.Employee;
 import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
@@ -11,7 +11,7 @@ public class Sorter {
     private static Comparator<Employee> comparatorSalary = new Comparator<Employee>() {
         @Override
         public int compare(Employee o1, Employee o2) {
-            return Integer.compare(o1.getSalaryPerHour(), o2.getSalaryPerHour());
+            return Double.compare(o1.getSalaryPerHour(), o2.getSalaryPerHour());
         }
     };
 

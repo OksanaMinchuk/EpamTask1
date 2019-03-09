@@ -12,9 +12,13 @@ import by.epam.minchuk.task1.model.exception.EmployeeDataWrongException;
 
 public class Employee {
 
+    public enum EmployeeType {
+        DEVELOPER, TESTER, PROJECTMANAGER
+    }
+
     private String name;
     private String surname;
-    private int salaryPerHour;
+    private double salaryPerHour;
 
     public Employee() {
     }
@@ -25,6 +29,12 @@ public class Employee {
             this.surname = surname;
             this.salaryPerHour = salaryPerHour;
         }
+    }
+
+    public Employee(Employee employee) {
+        this.name = employee.name;
+        this.surname = employee.surname;
+        this.salaryPerHour = employee.salaryPerHour;
     }
 
     public String getName() {
@@ -51,11 +61,11 @@ public class Employee {
         }
     }
 
-    public int getSalaryPerHour() {
+    public double getSalaryPerHour() {
         return salaryPerHour;
     }
 
-    public void setSalaryPerHour(int salaryPerHour) throws EmployeeDataWrongException {
+    public void setSalaryPerHour(double salaryPerHour) throws EmployeeDataWrongException {
         if (salaryPerHour > 0) {
             this.salaryPerHour = salaryPerHour;
         } else {
@@ -77,9 +87,12 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + salaryPerHour;
+        int result;
+        long temp;
+        result = name.hashCode();
+        result = 31 * result + surname.hashCode();
+        temp = Double.doubleToLongBits(salaryPerHour);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
 

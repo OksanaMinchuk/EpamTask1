@@ -6,7 +6,7 @@ import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
 import java.util.Arrays;
 
 /**
- * Class {@code ITCompany} for adding and removing Employees to the ITCompany
+ * Class {@code ITCompany}
  *
  * @autor Oksana Minchuk
  * @version 1.0 17.02.2019
@@ -14,36 +14,51 @@ import java.util.Arrays;
 
 public class ITCompany {
 
-    private Employee employees[];
+    private static final int DEFAULT_LENGHT = 0;
+    private Employee employeesArray[];
+    private int lenght;
 
     public ITCompany() {
-        employees = new Employee[0];
+        lenght = DEFAULT_LENGHT;
+        employeesArray = new Employee[lenght];
     }
 
-    public ITCompany(Employee[] employees) {
-        this.employees = employees;
+    public ITCompany(Employee[] employeesArray) {
+        this.employeesArray = employeesArray;
     }
 
-    public Employee[] getEmployees() {
-        return employees;
+    public int getLenght() {
+        return lenght;
     }
 
-    public void setEmployees(Employee[] employees) throws ITCompanyDataWrongException {
-        if (employees != null) {
-            this.employees = employees;
+    public Employee[] getEmployeesArray() {
+        return employeesArray;
+    }
+
+    public Employee getEmployee(int index) throws ITCompanyDataWrongException {
+        if (index >= 0 || index < lenght) {
+            return employeesArray[index];
         } else {
-            throw new ITCompanyDataWrongException("Wrong employees array value");
+            throw new ITCompanyDataWrongException("Wrong array index");
+        }
+    }
+
+    public void setEmployee(int index, Employee newEmployee) throws ITCompanyDataWrongException {
+        if (newEmployee != null && index >=0 && index < lenght) {
+            this.employeesArray[index] = newEmployee;
+        } else {
+            throw new ITCompanyDataWrongException("Wrong array index or newEmployee value is null");
         }
     }
 
     public void addEmployeeToCompany (Employee employee) throws ITCompanyNullPointerException {
         if (employee != null) {
-            Employee newEmployees[] = new Employee[employees.length + 1];
-            for (int i = 0; i < employees.length; i++) {
-                newEmployees[i] = employees[i];
+            Employee newEmployees[] = new Employee[employeesArray.length + 1];
+            for (int i = 0; i < employeesArray.length; i++) {
+                newEmployees[i] = employeesArray[i];
             }
-            newEmployees[employees.length] = employee;
-            employees = newEmployees;
+            newEmployees[employeesArray.length] = employee;
+            employeesArray = newEmployees;
         } else {
             throw new ITCompanyNullPointerException ("Invoking a method \"addEmployeeToCompany\" for a null object, employee cannot be null");
         }
@@ -51,15 +66,15 @@ public class ITCompany {
 
     public void removeEmployeeFromCompany(Employee employee) throws ITCompanyNullPointerException {
         if (employee != null) {
-            Employee newEmployees[] = new Employee[employees.length-1];
-            for (int i = 0, j = 0; i < employees.length; i++, j++) {
-                if (!employee.equals(employees[i])) {
-                    newEmployees[j] = employees[i];
+            Employee newEmployees[] = new Employee[employeesArray.length-1];
+            for (int i = 0, j = 0; i < employeesArray.length; i++, j++) {
+                if (!employee.equals(employeesArray[i])) {
+                    newEmployees[j] = employeesArray[i];
                 } else {
                     j--;
                 }
             }
-            employees = newEmployees;
+            employeesArray = newEmployees;
         } else {
             throw new ITCompanyNullPointerException ("Invoking a method \"removeEmployeeFromCompany\" for a null object, employee cannot be null");
         }
@@ -71,18 +86,22 @@ public class ITCompany {
         if (o == null || getClass() != o.getClass()) return false;
 
         ITCompany itCompany = (ITCompany) o;
-        return Arrays.equals(employees, itCompany.employees);
+
+        if (lenght != itCompany.lenght) return false;
+        return Arrays.equals(employeesArray, itCompany.employeesArray);
     }
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(employees);
+        int result = Arrays.hashCode(employeesArray);
+        result = 31 * result + lenght;
+        return result;
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("ITCompany\n");
-        for (Employee employee : employees) {
+        for (Employee employee : employeesArray) {
             builder.append(employee).append("\n");
         }
         return builder + "";

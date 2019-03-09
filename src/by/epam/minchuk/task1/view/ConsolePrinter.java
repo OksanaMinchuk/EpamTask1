@@ -4,7 +4,7 @@ import by.epam.minchuk.task1.model.entity.Employee;
 
 import java.util.List;
 
-public class PrinterConsole implements Printable{
+public class ConsolePrinter implements Printable{
     @Override
     public void printMessage(String message) {
         System.out.println(message);

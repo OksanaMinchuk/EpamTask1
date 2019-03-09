@@ -25,6 +25,11 @@ public class Tester extends Engineer {
         this.testerType = testerType;
     }
 
+    public Tester(Tester tester) {
+        super(tester);
+        this.testerType = tester.testerType;
+    }
+
     public TesterType getTesterType() {
         return testerType;
     }

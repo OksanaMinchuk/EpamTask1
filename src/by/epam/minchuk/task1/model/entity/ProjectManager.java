@@ -23,6 +23,11 @@ public class ProjectManager extends Employee {
         }
     }
 
+    public ProjectManager(ProjectManager projectManager) {
+        super(projectManager);
+        this.project = projectManager.project;
+    }
+
     public String getProject() {
         return project;
     }

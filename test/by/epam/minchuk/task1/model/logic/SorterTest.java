@@ -3,7 +3,6 @@ package by.epam.minchuk.task1.model.logic;
 import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
 import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
-import by.epam.minchuk.task1.model.logic.sorter.Sorter;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +23,7 @@ public class SorterTest {
                 Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL));
         itCompany.addEmployeeToCompany(new ProjectManager("Scott", "Johnson", 60, "Online-Store"));
 
-        actualEmployees = itCompany.getEmployees();
+        actualEmployees = itCompany.getEmployeesArray();
     }
 
     @Test

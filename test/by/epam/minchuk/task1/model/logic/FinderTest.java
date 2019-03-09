@@ -3,7 +3,6 @@ package by.epam.minchuk.task1.model.logic;
 import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
 import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
-import by.epam.minchuk.task1.model.logic.finder.Finder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +26,7 @@ public class FinderTest {
                 Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL));
         itCompany.addEmployeeToCompany(new ProjectManager("Scott", "Johnson", 60, "Online-Store"));
 
-        actualEmployees = itCompany.getEmployees();
+        actualEmployees = itCompany.getEmployeesArray();
     }
 
     @Test
@@ -49,7 +48,7 @@ public class FinderTest {
 
     @Test
     public void testPositiveFindEmployeeByMaxSalary() throws FinderNullPointerException {
-        int maxSalary = Finder.findMaxSalary(actualEmployees);
+        double maxSalary = Finder.findMaxSalary(actualEmployees);
         Employee actualEmployee = Finder.findEmployeeByMaxSalary(actualEmployees, maxSalary);
         Employee expectedEmployee = new ProjectManager("Scott", "Johnson", 60, "Online-Store");
         Assert.assertEquals(expectedEmployee, actualEmployee);
@@ -57,7 +56,7 @@ public class FinderTest {
 
     @Test(expected = FinderNullPointerException.class)
     public void testExceptionFindEmployeeByMaxSalaryWrongEmployee() throws FinderNullPointerException {
-        int maxSalary = Finder.findMaxSalary(actualEmployees);
+        double maxSalary = Finder.findMaxSalary(actualEmployees);
         actualEmployees = null;
         Finder.findEmployeeByMaxSalary(actualEmployees, maxSalary);
     }
@@ -69,8 +68,8 @@ public class FinderTest {
 
     @Test
     public void testPositiveFindMaxSalary() throws FinderNullPointerException {
-        int actualMaxSalary = Finder.findMaxSalary(actualEmployees);
-        int excpectedMaxSalary = 60;
+        double actualMaxSalary = Finder.findMaxSalary(actualEmployees);
+        double excpectedMaxSalary = 60;
         Assert.assertEquals(excpectedMaxSalary, actualMaxSalary);
     }
 

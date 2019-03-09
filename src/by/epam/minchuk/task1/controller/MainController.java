@@ -2,46 +2,57 @@ package by.epam.minchuk.task1.controller;
 
 
 import by.epam.minchuk.task1.model.entity.Employee;
+import by.epam.minchuk.task1.model.entity.ITCompany;
 import by.epam.minchuk.task1.model.entity.Team;
-import by.epam.minchuk.task1.model.creator.CompanyCreator;
-import by.epam.minchuk.task1.model.creator.TypeEmployee;
+import by.epam.minchuk.task1.util.CompanyCreator;
 import by.epam.minchuk.task1.model.exception.CompanyCreatorNullPointerException;
 import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
 import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
 import by.epam.minchuk.task1.model.exception.TeamNullPointerException;
-import by.epam.minchuk.task1.model.logic.sorter.Sorter;
-import by.epam.minchuk.task1.model.logic.finder.Finder;
+import by.epam.minchuk.task1.model.logic.Sorter;
+import by.epam.minchuk.task1.model.logic.Finder;
 import by.epam.minchuk.task1.view.Printable;
 import by.epam.minchuk.task1.view.PrinterType;
 import by.epam.minchuk.task1.view.creator.PrinterCreator;
+import by.epam.minchuk.task1.view.exception.PrinterEnumConstantNotPresentException;
 
 
 public class MainController {
     public static void main(String[] args) {
 
-        CompanyCreator companyCreator = new CompanyCreator();
-        Employee employees [] = companyCreator.createCompany();
+
+        Employee employees [] = CompanyCreator.createCompany();
+        ITCompany itCompany = new ITCompany(employees);
 
         Team team1 = null;
         Team team2 = null;
         try {
-            team1 = companyCreator.createTeamNumberOne(employees);
-            team2 = companyCreator.createTeamNumberTwo(employees);
+            team1 = CompanyCreator.createTeamNumberOne(itCompany);
+            team2 = CompanyCreator.createTeamNumberTwo(itCompany);
         } catch (CompanyCreatorNullPointerException e) {
             e.printStackTrace();
         }
 
-        int priceTeam1 = 0;
-        int priceTeam2 = 0;
+        double priceTeam1 = 0;
+        double priceTeam2 = 0;
 
         try {
-            priceTeam1 = team1.getTeamPrice(team1.getManager(), team1.getTeamEmployees());
-            priceTeam2 = team1.getTeamPrice(team2.getManager(), team2.getTeamEmployees());
+            priceTeam1 = team1.getTeamPrice();
+            priceTeam2 = team1.getTeamPrice();
         } catch (TeamNullPointerException e) {
             e.printStackTrace();
         }
 
-        Printable printer = PrinterCreator.getPrinter(PrinterType.CONSOLE);
+        Printable printer = null;
+
+        try {
+            printer = PrinterCreator.getPrinter(PrinterType.CONSOLE);
+        } catch (PrinterEnumConstantNotPresentException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+            System.err.println("The cause of this throwable is: " + e.getCause());
+        }
+
         printer.printMessage("\tAll employees in ITCompany:");
         printer.print(employees);
 
@@ -65,22 +76,25 @@ public class MainController {
         try {
             printer.printMessage("\tFind all employees by surname:");
             printer.print(Finder.findAllEmployeeBySurname(employees, "Conor"));
+
             printer.printMessage("\tMax salary is: " + Finder.findMaxSalary(employees));
 
             printer.printMessage("\tEmployee with max salary is:");
             printer.print(Finder.findEmployeeByMaxSalary(employees, Finder.findMaxSalary(employees)));
 
             printer.printMessage("\tEmployee by type TESTER:");
-            printer.print(Finder.findEmployeeByType(employees, TypeEmployee.TESTER));
+            printer.print(Finder.findEmployeeByType(employees, Employee.EmployeeType.TESTER));
 
             printer.printMessage("\tEmployee by type PROJECT_MANAGER:");
-            printer.print(Finder.findEmployeeByType(employees, TypeEmployee.PROJECTMANAGER));
+            printer.print(Finder.findEmployeeByType(employees, Employee.EmployeeType.PROJECTMANAGER));
 
             printer.printMessage("\tEmployee by type DEVELOPER:");
-            printer.print(Finder.findEmployeeByType(employees, TypeEmployee.DEVELOPER));
+            printer.print(Finder.findEmployeeByType(employees, Employee.EmployeeType.DEVELOPER));
         } catch (FinderNullPointerException finderNullPointerException) {
             finderNullPointerException.printStackTrace();
         }
+
+
 
     }
 }

@@ -45,17 +45,17 @@ public class EmployeeTest {
 
     @Test
     public void testPositiveSetSalaryPerHour () throws EmployeeDataWrongException {
-        int expected = 25;
+        double expected = 25;
         employee.setSalaryPerHour(25);
-        int actual = employee.getSalaryPerHour();
+        double actual = employee.getSalaryPerHour();
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void testNegativeSetSalaryPerHour () throws EmployeeDataWrongException {
-        int expected = 10;
+        double expected = 10;
         employee.setSalaryPerHour(25);
-        int actual = employee.getSalaryPerHour();
+        double actual = employee.getSalaryPerHour();
         Assert.assertNotEquals(expected, actual);
     }
 
@@ -71,8 +71,8 @@ public class EmployeeTest {
         String actualName = this.employee.getName();
         String expectedSurname = "Conor";
         String actualSurname = this.employee.getSurname();
-        int expectedSalary = 27;
-        int actualSalary = this.employee.getSalaryPerHour();
+        double expectedSalary = 27;
+        double actualSalary = this.employee.getSalaryPerHour();
 
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedSurname, actualSurname);
