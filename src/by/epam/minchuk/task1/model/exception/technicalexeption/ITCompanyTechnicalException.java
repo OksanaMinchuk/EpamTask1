@@ -1,4 +1,6 @@
-package by.epam.minchuk.task1.model.exception;
+package by.epam.minchuk.task1.model.exception.technicalexeption;
+
+import by.epam.minchuk.task1.model.exception.ITCompanyException;
 
 public class ITCompanyTechnicalException extends ITCompanyException {
 
@@ -17,7 +19,4 @@ public class ITCompanyTechnicalException extends ITCompanyException {
         super(cause);
     }
 
-    public ITCompanyTechnicalException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

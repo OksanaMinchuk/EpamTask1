@@ -1,6 +1,6 @@
 package by.epam.minchuk.task1.view.exception;
 
-import by.epam.minchuk.task1.model.exception.ITCompanyTechnicalException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyTechnicalException;
 
 public class PrinterEnumConstantNotPresentException extends ITCompanyTechnicalException {
 

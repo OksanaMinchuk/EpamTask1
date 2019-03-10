@@ -1,7 +1,7 @@
 package by.epam.minchuk.task1.model.entity;
 
-import by.epam.minchuk.task1.model.exception.ITCompanyDataWrongException;
-import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
+import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
 
 import java.util.Arrays;
 

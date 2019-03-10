@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.view.creator;
+package by.epam.minchuk.task1.view.printercreator;
 
 import by.epam.minchuk.task1.view.*;
 import by.epam.minchuk.task1.view.exception.PrinterEnumConstantNotPresentException;

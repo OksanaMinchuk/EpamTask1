@@ -1,6 +1,6 @@
 package by.epam.minchuk.task1.model.entity;
 
-import by.epam.minchuk.task1.model.exception.EmployeeDataWrongException;
+import by.epam.minchuk.task1.model.exception.logicexception.EmployeeDataWrongException;
 import org.junit.*;
 
 public class EmployeeTest {

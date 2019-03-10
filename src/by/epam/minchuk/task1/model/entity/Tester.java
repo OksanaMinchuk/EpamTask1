@@ -1,6 +1,6 @@
 package by.epam.minchuk.task1.model.entity;
 
-import by.epam.minchuk.task1.model.exception.TesterDataWrongException;
+import by.epam.minchuk.task1.model.exception.logicexception.TesterDataWrongException;
 
 /**
  * Class {@code Tester} is a subclass of Engineer

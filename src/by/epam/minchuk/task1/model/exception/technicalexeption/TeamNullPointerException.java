@@ -1,4 +1,6 @@
-package by.epam.minchuk.task1.model.exception;
+package by.epam.minchuk.task1.model.exception.technicalexeption;
+
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyTechnicalException;
 
 public class TeamNullPointerException extends ITCompanyTechnicalException {
 
@@ -17,7 +19,4 @@ public class TeamNullPointerException extends ITCompanyTechnicalException {
         super(cause);
     }
 
-    public TeamNullPointerException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

@@ -1,7 +1,8 @@
 package by.epam.minchuk.task1.model.logic;
 
 import by.epam.minchuk.task1.model.entity.Employee;
-import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
+import by.epam.minchuk.task1.model.exception.logicexception.FinderEmployeeNotFoundException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.FinderNullPointerException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +12,18 @@ public class Finder {
     /**
      * Returns an Arraylist containing all of the elements in existing array by surname
      */
-    public static List<Employee> findAllEmployeeBySurname(Employee [] employees, String surnameValue) throws FinderNullPointerException {
+    public static List<Employee> findAllEmployeeBySurname(Employee [] employees, String surnameValue) throws FinderNullPointerException, FinderEmployeeNotFoundException {
         if (employees != null && surnameValue != null) {
+            int countEmployeeBySurname = 0;
             List<Employee> findEmployees = new ArrayList<>();
             for (int i = 0; i < employees.length; i++) {
                 if (employees[i].getSurname().equals(surnameValue)) {
                     findEmployees.add(employees[i]);
+                    countEmployeeBySurname++;
                 }
+            }
+            if (countEmployeeBySurname == 0) {
+                throw new FinderEmployeeNotFoundException("Employee by surname " + surnameValue + " not found");
             }
             return findEmployees;
         } else {

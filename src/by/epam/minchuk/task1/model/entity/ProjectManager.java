@@ -1,6 +1,6 @@
 package by.epam.minchuk.task1.model.entity;
 
-import by.epam.minchuk.task1.model.exception.ProjectManagerDataWrongException;
+import by.epam.minchuk.task1.model.exception.logicexception.ProjectManagerDataWrongException;
 
 /**
  * Class {@code ProjectManager} is a subclass of Employee

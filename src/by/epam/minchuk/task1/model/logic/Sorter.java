@@ -1,7 +1,7 @@
 package by.epam.minchuk.task1.model.logic;
 
 import by.epam.minchuk.task1.model.entity.Employee;
-import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
 
 import java.util.Arrays;
 import java.util.Comparator;

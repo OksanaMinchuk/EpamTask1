@@ -1,8 +1,8 @@
 package by.epam.minchuk.task1.model.entity;
 
 
-import by.epam.minchuk.task1.model.exception.TeamDataWrongException;
-import by.epam.minchuk.task1.model.exception.TeamNullPointerException;
+import by.epam.minchuk.task1.model.exception.logicexception.TeamDataWrongException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.TeamNullPointerException;
 
 public class Team {
     private ProjectManager manager;

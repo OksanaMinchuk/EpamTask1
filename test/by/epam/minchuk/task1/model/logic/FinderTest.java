@@ -1,8 +1,9 @@
 package by.epam.minchuk.task1.model.logic;
 
 import by.epam.minchuk.task1.model.entity.*;
-import by.epam.minchuk.task1.model.exception.FinderNullPointerException;
-import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
+import by.epam.minchuk.task1.model.exception.logicexception.FinderEmployeeNotFoundException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.FinderNullPointerException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +31,7 @@ public class FinderTest {
     }
 
     @Test
-    public void testPositiveFindAllEmployeeBySurname() throws FinderNullPointerException {
+    public void testPositiveFindAllEmployeeBySurname() throws FinderNullPointerException, FinderEmployeeNotFoundException {
         List<Employee> expectedEmployees = new ArrayList<>();
         expectedEmployees.add(new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
                 Developer.DeveloperType.BACK_END, "Java"));
@@ -41,7 +42,7 @@ public class FinderTest {
     }
 
     @Test(expected = FinderNullPointerException.class)
-    public void testExceptionFindAllEmployeeBySurname() throws FinderNullPointerException {
+    public void testExceptionFindAllEmployeeBySurname() throws FinderNullPointerException, FinderEmployeeNotFoundException {
         actualEmployees = null;
         Finder.findAllEmployeeBySurname(actualEmployees, "Conor");
     }
@@ -70,7 +71,8 @@ public class FinderTest {
     public void testPositiveFindMaxSalary() throws FinderNullPointerException {
         double actualMaxSalary = Finder.findMaxSalary(actualEmployees);
         double excpectedMaxSalary = 60;
-        Assert.assertEquals(excpectedMaxSalary, actualMaxSalary);
+        double delta = 0.01;
+        Assert.assertEquals(excpectedMaxSalary, actualMaxSalary, delta);
     }
 
     @Test(expected = FinderNullPointerException.class)
@@ -80,7 +82,7 @@ public class FinderTest {
     }
 
     @Test
-    public void testFindEmployeeByType() throws FinderNullPointerException {
+    public void testFindEmployeeByType() throws FinderNullPointerException, FinderEmployeeNotFoundException {
         List<Employee> expectedEmployees = new ArrayList<>();
         expectedEmployees.add(new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
                 Developer.DeveloperType.BACK_END, "Java"));
@@ -91,7 +93,7 @@ public class FinderTest {
     }
 
     @Test(expected = FinderNullPointerException.class)
-    public void testExceptionFindEmployeeByType() throws FinderNullPointerException {
+    public void testExceptionFindEmployeeByType() throws FinderNullPointerException, FinderEmployeeNotFoundException {
         actualEmployees = null;
         Finder.findAllEmployeeBySurname(actualEmployees, "Conor");
     }

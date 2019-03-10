@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.exception;
+package by.epam.minchuk.task1.model.exception.technicalexeption;
 
 public class CompanyCreatorNullPointerException extends ITCompanyTechnicalException {
 
@@ -17,7 +17,4 @@ public class CompanyCreatorNullPointerException extends ITCompanyTechnicalExcept
         super(cause);
     }
 
-    public CompanyCreatorNullPointerException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

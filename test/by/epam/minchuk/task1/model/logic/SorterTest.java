@@ -1,8 +1,8 @@
 package by.epam.minchuk.task1.model.logic;
 
 import by.epam.minchuk.task1.model.entity.*;
-import by.epam.minchuk.task1.model.exception.ITCompanyNullPointerException;
-import by.epam.minchuk.task1.model.exception.SorterNullPointerException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
