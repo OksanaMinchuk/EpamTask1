@@ -48,7 +48,8 @@ public class EmployeeTest {
         double expected = 25;
         employee.setSalaryPerHour(25);
         double actual = employee.getSalaryPerHour();
-        Assert.assertEquals(expected, actual);
+        double delta = 0.01;
+        Assert.assertEquals(expected, actual, delta);
     }
 
     @Test
@@ -73,10 +74,10 @@ public class EmployeeTest {
         String actualSurname = this.employee.getSurname();
         double expectedSalary = 27;
         double actualSalary = this.employee.getSalaryPerHour();
-
+        double delta = 0.01;
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedSurname, actualSurname);
-        Assert.assertEquals(expectedSalary, actualSalary);
+        Assert.assertEquals(expectedSalary, actualSalary, delta);
     }
 
     @Test

@@ -1,55 +1,49 @@
 package by.epam.minchuk.task1.model.logic;
 
+import by.epam.minchuk.task1.model.EmployeeCreatorForTest;
 import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyTechnicalException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 public class SorterTest {
 
-    Employee[] actualEmployees;
+    private Employee[] actualEmployees;
+    private ITCompany itCompany;
 
     @Before
-    public void init() throws ITCompanyNullPointerException {
-        ITCompany itCompany = new ITCompany();
+    public void init() {
+       itCompany = new ITCompany();
+    }
 
-        itCompany.addEmployeeToCompany(new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
-                Developer.DeveloperType.BACK_END, "Java"));
-        itCompany.addEmployeeToCompany(new Developer("Donald", "Conor", 46, Engineer.EngineerLevelType.MIDDLE,
-                Developer.DeveloperType.BACK_END, "C++"));
-        itCompany.addEmployeeToCompany(new Tester("Tom", "Gibbs", 25,
-                Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL));
-        itCompany.addEmployeeToCompany(new ProjectManager("Scott", "Johnson", 60, "Online-Store"));
-
+    @Test
+    public void testPositiveSortBySalary() throws SorterNullPointerException, ITCompanyNullPointerException {
+        Employee[] expectedEmployees = {
+                new Tester("Tom", "Gibbs", 25,
+                        Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL),
+                new Developer("Donald", "Conor", 46, Engineer.EngineerLevelType.MIDDLE,
+                        Developer.DeveloperType.BACK_END, "C++"),
+                new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
+                        Developer.DeveloperType.BACK_END, "Java"),
+                new ProjectManager("Scott", "Johnson", 60, "Online-Store")
+        };
+        itCompany.setEmployeesArray(EmployeeCreatorForTest.initEmployee());
+        Sorter.sortBySalary(itCompany);
         actualEmployees = itCompany.getEmployeesArray();
-    }
-
-    @Test
-    public void testPositiveSortBySalary() throws SorterNullPointerException {
-        Employee [] expectedEmployees = {
-                new Tester("Tom", "Gibbs", 25,
-                        Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL),
-                new Developer("Donald", "Conor", 46, Engineer.EngineerLevelType.MIDDLE,
-                        Developer.DeveloperType.BACK_END, "C++"),
-                new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
-                        Developer.DeveloperType.BACK_END, "Java"),
-                new ProjectManager("Scott", "Johnson", 60, "Online-Store")
-        };
-        Sorter.sortBySalary(actualEmployees);
         Assert.assertArrayEquals(expectedEmployees, actualEmployees);
     }
 
-    @Test(expected = SorterNullPointerException.class)
-    public void testExceptionSortBySalary() throws SorterNullPointerException {
+    @Test(expected = ITCompanyTechnicalException.class)
+    public void testExceptionSortBySalary() throws SorterNullPointerException, ITCompanyNullPointerException {
         actualEmployees = null;
-        Sorter.sortBySalary(actualEmployees);
+        itCompany.setEmployeesArray(actualEmployees);
+        Sorter.sortBySalary(itCompany);
     }
 
     @Test
-    public void testPositiveSortBySurnameAndSalary() throws SorterNullPointerException {
-        Employee [] expectedEmployees = {
+    public void testPositiveSortBySurnameAndSalary() throws SorterNullPointerException, ITCompanyNullPointerException {
+        Employee[] expectedEmployees = {
                 new Developer("Donald", "Conor", 46, Engineer.EngineerLevelType.MIDDLE,
                         Developer.DeveloperType.BACK_END, "C++"),
                 new Developer("John", "Conor", 50, Engineer.EngineerLevelType.MIDDLE,
@@ -58,15 +52,17 @@ public class SorterTest {
                         Tester.EngineerLevelType.JUNIOR, Tester.TesterType.MANUAL),
                 new ProjectManager("Scott", "Johnson", 60, "Online-Store")
         };
-        Sorter.sortBySurnameAndSalary(actualEmployees);
+        itCompany.setEmployeesArray(EmployeeCreatorForTest.initEmployee());
+        Sorter.sortBySurnameAndSalary(itCompany);
+        actualEmployees = itCompany.getEmployeesArray();
         Assert.assertArrayEquals(expectedEmployees, actualEmployees);
     }
 
-    @Test(expected = SorterNullPointerException.class)
-    public void testExceptionSortBySurnameAndSalary() throws SorterNullPointerException {
+    @Test(expected = ITCompanyTechnicalException.class)
+    public void testExceptionSortBySurnameAndSalary() throws SorterNullPointerException, ITCompanyNullPointerException {
         actualEmployees = null;
-        Sorter.sortBySurnameAndSalary(actualEmployees);
+        itCompany.setEmployeesArray(actualEmployees);
+        Sorter.sortBySurnameAndSalary(itCompany);
     }
-
 
 }
