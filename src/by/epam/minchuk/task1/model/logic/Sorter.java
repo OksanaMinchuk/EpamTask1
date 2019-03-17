@@ -1,38 +1,46 @@
 package by.epam.minchuk.task1.model.logic;
 
-import by.epam.minchuk.task1.model.entity.Employee;
+import by.epam.minchuk.task1.model.entity.ITCompany;
 import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
+import by.epam.minchuk.task1.model.logic.comparator.ComparatorSalary;
+import by.epam.minchuk.task1.model.logic.comparator.ComparatorSurname;
+import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * Class {@code Sorter}  allows to sort Employee by different conditions
+ *
+ * @autor Oksana Minchuk
+ * @version 1.0 16.03.2019
+ */
+
 public class Sorter {
 
-    private static Comparator<Employee> comparatorSalary = new Comparator<Employee>() {
-        @Override
-        public int compare(Employee o1, Employee o2) {
-            return Double.compare(o1.getSalaryPerHour(), o2.getSalaryPerHour());
-        }
-    };
+    private static final Logger LOGGER;
 
-    private static Comparator<Employee> comparatorSurname = new Comparator<Employee>() {
-        @Override
-        public int compare(Employee o1, Employee o2) {
-            return o1.getSurname().compareTo(o2.getSurname());
-        }
-    };
+    static {
+        LOGGER = Logger.getRootLogger();
+    }
 
-    public static void sortBySalary(Employee [] employees) throws SorterNullPointerException {
-        if (employees != null) {
-            Arrays.sort(employees, comparatorSalary);
+    private static Comparator comparator;
+
+    public static void sortBySalary(ITCompany itCompany) throws SorterNullPointerException {
+        if (itCompany.getEmployeesArray() != null) {
+            comparator = new ComparatorSalary();
+            Arrays.sort(itCompany.getEmployeesArray(), comparator);
+            LOGGER.info("sorting by salary is successful");
         } else {
             throw new SorterNullPointerException("Invoking a method \"sortBySalary\" for a null object, employees cannot be null");
         }
     }
 
-    public static void sortBySurnameAndSalary(Employee [] employees) throws SorterNullPointerException {
-        if (employees != null) {
-            Arrays.sort(employees, comparatorSurname.thenComparing(comparatorSalary));
+    public static void sortBySurnameAndSalary(ITCompany itCompany) throws SorterNullPointerException {
+        if (itCompany.getEmployeesArray() != null) {
+            comparator = new ComparatorSurname();
+            Arrays.sort(itCompany.getEmployeesArray(), comparator.thenComparing(new ComparatorSalary()));
+            LOGGER.info("sorting by surname and salary is successful");
         } else {
             throw new SorterNullPointerException("Invoking a method \"sortBySurnameAndSalary\" for a null object, employees cannot be null");
         }

@@ -1,6 +1,6 @@
-package by.epam.minchuk.task1.model.collection.collectionImpl;
+package by.epam.minchuk.task1.util.collection.collectionImpl;
 
-import by.epam.minchuk.task1.model.collection.MyQueue;
+import by.epam.minchuk.task1.util.collection.MyQueue;
 
 public class MyArrayListQueue<E> extends MyArrayList<E> implements MyQueue<E> {
 

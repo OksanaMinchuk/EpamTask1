@@ -1,33 +1,36 @@
 package by.epam.minchuk.task1.model.entity;
 
-
 import by.epam.minchuk.task1.model.exception.logicexception.TeamDataWrongException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.EmployableNullPointerExeption;
 import by.epam.minchuk.task1.model.exception.technicalexeption.TeamNullPointerException;
 
-public class Team {
+/**
+ * Class {@code Team}
+ *
+ * @autor Oksana Minchuk
+ * @version 1.0 16.03.2019
+ */
+
+public class Team implements Employable {
+
+    private static final int DEFAULT_LENGHT = 0;
+    private int lenght;
     private ProjectManager manager;
-    private Developer backEndDeveloper;
-    private Developer frontEndDeveloper;
-    private Tester manualTester;
-    private Tester automationTester;
+    private Engineer[] engineers;
 
     public Team() {
+        lenght = DEFAULT_LENGHT;
+        engineers = new Engineer[DEFAULT_LENGHT];
     }
 
-    public Team(ProjectManager manager, Developer backEndDeveloper, Developer frontEndDeveloper, Tester manualTester, Tester automationTester) {
+    public Team(ProjectManager manager, Engineer[] engineers) {
         this.manager = manager;
-        this.backEndDeveloper = backEndDeveloper;
-        this.frontEndDeveloper = frontEndDeveloper;
-        this.manualTester = manualTester;
-        this.automationTester = automationTester;
+        this.engineers = engineers;
     }
 
     public Team(Team team) {
         this.manager = team.manager;
-        this.backEndDeveloper = team.backEndDeveloper;
-        this.frontEndDeveloper = team.frontEndDeveloper;
-        this.manualTester = team.manualTester;
-        this.automationTester = team.automationTester;
+        this.engineers = team.engineers.clone();
     }
 
     public ProjectManager getManager() {
@@ -38,95 +41,91 @@ public class Team {
         if (manager != null) {
             this.manager = manager;
         } else {
-            throw new TeamNullPointerException("Wrong manager value, manager cannot be null");
+            throw new TeamNullPointerException();
         }
     }
 
-    public Developer getBackEndDeveloper() {
-        return backEndDeveloper;
+    public Engineer[] getEngineers() {
+        return engineers;
     }
 
-    public void setBackEndDeveloper(Developer backEndDeveloper) throws TeamDataWrongException {
-        if (backEndDeveloper !=null && backEndDeveloper.getDeveloperType().equals(Developer.DeveloperType.BACK_END)) {
-            this.backEndDeveloper = backEndDeveloper;
+    public void setEngineers(Engineer[] engineers) throws TeamNullPointerException{
+        if (engineers != null) {
+            this.engineers = engineers;
         } else {
-            throw new TeamDataWrongException("Wrong backEndDeveloper value");
+            throw new TeamNullPointerException();
         }
     }
 
-    public Developer getFrontEndDeveloper() {
-        return frontEndDeveloper;
+    public int getLenght() {
+        return lenght;
     }
 
-    public void setFrontEndDeveloper(Developer frontEndDeveloper) throws TeamDataWrongException {
-        if (frontEndDeveloper != null && frontEndDeveloper.getDeveloperType().equals(Developer.DeveloperType.FRONT_END)) {
-            this.frontEndDeveloper = frontEndDeveloper;
+    public void setLenght(int lenght) throws TeamDataWrongException {
+        if (lenght >= 0) {
+        this.lenght = lenght;
         } else {
-            throw new TeamDataWrongException("Wrong frontEndDeveloper value");
+            throw new TeamDataWrongException("Wrong array lenght");
         }
     }
 
-    public Tester getManualTester() {
-        return manualTester;
-    }
-
-    public void setManualTester(Tester manualTester) throws TeamDataWrongException {
-        if (manualTester != null && manualTester.getTesterType().equals(Tester.TesterType.MANUAL)) {
-            this.manualTester = manualTester;
+    public Engineer getEngineerByIndex(int index) throws TeamDataWrongException {
+        if (index >= 0|| index < lenght) {
+            return engineers[index];
         } else {
-            throw new TeamDataWrongException("Wrong manualTester value");
+            throw new TeamDataWrongException("Wrong array index");
         }
     }
 
-    public Tester getAutomationTester() {
-        return automationTester;
-    }
-
-    public void setAutomationTester(Tester automationTester) throws TeamDataWrongException {
-        if (automationTester != null && automationTester.getTesterType().equals(Tester.TesterType.AUTOMATION)) {
-            this.automationTester = automationTester;
-        } else {
-            throw new TeamDataWrongException("Wrong automationTester value");
+    public double getTeamPrice(){
+        double price = this.manager.getSalaryPerHour();
+        for (Engineer engineer : this.engineers) {
+            price += engineer.getSalaryPerHour();
         }
-    }
-
-    public double getTeamPrice() throws TeamNullPointerException {
-        return manager.getSalaryPerHour() + backEndDeveloper.getSalaryPerHour() + frontEndDeveloper.getSalaryPerHour()
-                + manualTester.getSalaryPerHour() + automationTester.getSalaryPerHour();
+        return price;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Team team = (Team) o;
-
-        if (!manager.equals(team.manager)) return false;
-        if (!backEndDeveloper.equals(team.backEndDeveloper)) return false;
-        if (!frontEndDeveloper.equals(team.frontEndDeveloper)) return false;
-        if (!manualTester.equals(team.manualTester)) return false;
-        return automationTester.equals(team.automationTester);
+    public void addWorker(Employee employee) throws EmployableNullPointerExeption {
+        Engineer engineer = (Engineer)employee;
+        if (engineer != null) {
+            Engineer[] newEngineers = new Engineer[engineers.length + 1];
+            for (int i = 0; i < engineers.length; i++) {
+                newEngineers[i] = engineers[i];
+            }
+            newEngineers[engineers.length] = engineer;
+            engineers = newEngineers;
+        } else {
+            throw new EmployableNullPointerExeption ("Invoking a method for a null object, employee cannot be null");
+        }
     }
 
     @Override
-    public int hashCode() {
-        int result = manager.hashCode();
-        result = 31 * result + backEndDeveloper.hashCode();
-        result = 31 * result + frontEndDeveloper.hashCode();
-        result = 31 * result + manualTester.hashCode();
-        result = 31 * result + automationTester.hashCode();
-        return result;
+    public void removeWorker(Employee employee) throws EmployableNullPointerExeption{
+        Engineer engineer = (Engineer)employee;
+        if (engineer != null) {
+            Engineer newEngineers[] = new Engineer[engineers.length-1];
+            for (int i = 0, j = 0; i < engineers.length; i++, j++) {
+                if (!engineer.equals(engineers[i])) {
+                    newEngineers[j] = engineers[i];
+                } else {
+                    j--;
+                }
+            }
+            engineers = newEngineers;
+        } else {
+            throw new EmployableNullPointerExeption ("Invoking a method for a null object, employee cannot be null");
+        }
     }
 
     @Override
     public String toString() {
-        return "Team on project " + manager.getProject() + " { " +
-                "\nmanager=" + manager +
-                "\nbackEndDeveloper=" + backEndDeveloper +
-                "\nfrontEndDeveloper=" + frontEndDeveloper +
-                "\nmanualTester=" + manualTester +
-                "\nautomationTester=" + automationTester +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        for (Engineer engineer : engineers) {
+            builder.append(engineer).append("\n");
+        }
+        return "\tTeam on project \"" + manager.getProject() + "\""
+                + "\nmanager = " + manager
+                + ",\nengineers = \n" + builder.toString();
     }
 }

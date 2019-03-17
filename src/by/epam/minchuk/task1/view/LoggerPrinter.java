@@ -1,28 +1,18 @@
 package by.epam.minchuk.task1.view;
 
-import by.epam.minchuk.task1.model.entity.Employee;
-
-import java.util.List;
+import org.apache.log4j.Logger;
 
 public class LoggerPrinter implements Printable {
 
+    private static final Logger LOGGER = Logger.getRootLogger();
+
     @Override
     public void printMessage(String message) {
-
-    }
-
-    @Override
-    public void print(Employee[] ob) {
-
+        LOGGER.info(message);
     }
 
     @Override
     public void print(Object ob) {
-
-    }
-
-    @Override
-    public void print(List<Employee> employees) {
-
+        LOGGER.info(ob);
     }
 }

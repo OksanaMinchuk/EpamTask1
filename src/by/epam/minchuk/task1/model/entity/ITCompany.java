@@ -1,9 +1,12 @@
 package by.epam.minchuk.task1.model.entity;
 
 import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;
+import by.epam.minchuk.task1.model.exception.technicalexeption.EmployableNullPointerExeption;
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Class {@code ITCompany}
@@ -12,23 +15,49 @@ import java.util.Arrays;
  * @version 1.0 17.02.2019
  */
 
-public class ITCompany {
+public class ITCompany implements Employable {
 
     private static final int DEFAULT_LENGHT = 0;
-    private Employee employeesArray[];
     private int lenght;
+    private Employee[] employeesArray;
+    private List<Team> teams;
 
     public ITCompany() {
         lenght = DEFAULT_LENGHT;
         employeesArray = new Employee[lenght];
+        teams = new ArrayList<>();
     }
 
-    public ITCompany(Employee[] employeesArray) {
+    public ITCompany(Employee[] employeesArray, List<Team> teams) {
         this.employeesArray = employeesArray;
+        this.teams = teams;
+    }
+
+    public ITCompany(ITCompany itCompany) {
+        this.employeesArray = itCompany.employeesArray.clone();
+        for (int i = 0; i < teams.size(); i++ ) {
+            this.teams.add(itCompany.teams.get(i));
+        }
     }
 
     public int getLenght() {
         return lenght;
+    }
+
+    public void setEmployeesArray(Employee[] employeesArray) throws ITCompanyNullPointerException {
+        if (employeesArray != null) {
+            this.employeesArray = employeesArray;
+        } else {
+            throw new ITCompanyNullPointerException("employee array cannot be null");
+        }
+    }
+
+    public void setLenght(int lenght) throws ITCompanyDataWrongException {
+        if (lenght >= 0) {
+            this.lenght = lenght;
+        } else {
+            throw new ITCompanyDataWrongException("Wrong array lenght");
+        }
     }
 
     public Employee[] getEmployeesArray() {
@@ -51,7 +80,32 @@ public class ITCompany {
         }
     }
 
-    public void addEmployeeToCompany (Employee employee) throws ITCompanyNullPointerException {
+    public void addTeam(Team team) throws ITCompanyNullPointerException {
+        if (team != null) {
+            teams.add(team);
+        } else {
+            throw new ITCompanyNullPointerException("Invoking a method for a null object, employee can not be null");
+        }
+    }
+
+    public void removeTeam(Team team) throws ITCompanyNullPointerException {
+        if (team != null) {
+            teams.remove(team);
+        } else {
+            throw new ITCompanyNullPointerException("Invoking a method for a null object, employee can not be null");
+        }
+    }
+
+    public Team getTeamByIndex(int index) throws ITCompanyNullPointerException {
+        if (index >= 0 && index < teams.size()) {
+            return teams.get(index);
+        } else {
+            throw new ITCompanyNullPointerException("Invoking a method for a null object, employee can not be null");
+        }
+    }
+
+    @Override
+    public void addWorker(Employee employee) throws EmployableNullPointerExeption {
         if (employee != null) {
             Employee newEmployees[] = new Employee[employeesArray.length + 1];
             for (int i = 0; i < employeesArray.length; i++) {
@@ -60,11 +114,12 @@ public class ITCompany {
             newEmployees[employeesArray.length] = employee;
             employeesArray = newEmployees;
         } else {
-            throw new ITCompanyNullPointerException ("Invoking a method \"addEmployeeToCompany\" for a null object, employee cannot be null");
+            throw new EmployableNullPointerExeption ("Invoking a method \"addEmployeeToCompany\" for a null object, employee cannot be null");
         }
     }
 
-    public void removeEmployeeFromCompany(Employee employee) throws ITCompanyNullPointerException {
+    @Override
+    public void removeWorker(Employee employee) throws EmployableNullPointerExeption {
         if (employee != null) {
             Employee newEmployees[] = new Employee[employeesArray.length-1];
             for (int i = 0, j = 0; i < employeesArray.length; i++, j++) {
@@ -76,7 +131,7 @@ public class ITCompany {
             }
             employeesArray = newEmployees;
         } else {
-            throw new ITCompanyNullPointerException ("Invoking a method \"removeEmployeeFromCompany\" for a null object, employee cannot be null");
+            throw new EmployableNullPointerExeption ("Invoking a method \"removeEmployeeFromCompany\" for a null object, employee cannot be null");
         }
     }
 
@@ -100,12 +155,13 @@ public class ITCompany {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("ITCompany\n");
+        StringBuilder builder = new StringBuilder("\tITCompany\n");
         for (Employee employee : employeesArray) {
             builder.append(employee).append("\n");
         }
-        return builder + "";
+        for (Team team : teams) {
+            builder.append(team);
+        }
+        return builder.toString();
     }
-
-
 }

@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.collection.collectionImpl;
+package by.epam.minchuk.task1.util.collection.collectionImpl;
 
 import java.util.Arrays;
 

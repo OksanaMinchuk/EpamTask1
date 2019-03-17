@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.collection;
+package by.epam.minchuk.task1.util.collection;
 
 /**
  * The root interface in the collection hierarchy.

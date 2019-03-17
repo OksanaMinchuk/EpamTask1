@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.model.collection;
+package by.epam.minchuk.task1.util.collection;
 
 public interface MyStack<E> extends MyCollection<E> {
 

@@ -5,14 +5,16 @@ import by.epam.minchuk.task1.view.exception.PrinterEnumConstantNotPresentExcepti
 
 public class PrinterCreator {
 
-    private static Printable printer = null;
+    public enum PrinterType {
+        CONSOLE, FILE, LOGGER, SOME
+    }
 
     private PrinterCreator() {
 
     }
 
     public static Printable getPrinter(PrinterType printerType) throws PrinterEnumConstantNotPresentException {
-        if (printer == null) {
+        Printable printer;
             try {
                 switch (printerType) {
                     case FILE:
@@ -30,7 +32,6 @@ public class PrinterCreator {
             } catch (EnumConstantNotPresentException e) {
                 throw new PrinterEnumConstantNotPresentException("Incorrect value in switch", e);
             }
-        }
         return printer;
     }
 }

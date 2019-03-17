@@ -1,0 +1,219 @@
+
+2019-03-17 15:02:29 INFO  root:11 - 	All employees in ITCompany:
+2019-03-17 15:02:29 INFO  root:16 - 	ITCompany
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Developer { name='Cris', surname='Norman', salaryPerHour=42.0, level=MIDDLE, developerType=BACK_END, skill='Python'}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+Developer { name='Carroll', surname='Anderson', salaryPerHour=48.0, level=SENIOR, developerType=FRONT_END, skill='JavaScript'}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'}
+ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'}
+	Team on project "Online-Store"
+manager = ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'},
+engineers = 
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+	Team on project "Game"
+manager = ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'},
+engineers = 
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+
+2019-03-17 15:02:29 INFO  root:11 - 	Team 1 total price 226.0$ per hour
+2019-03-17 15:02:29 INFO  root:11 - 	Team 2 total price 185.0$ per hour
+2019-03-17 15:02:29 INFO  root:33 - sorting by salary is successful
+2019-03-17 15:02:29 INFO  root:11 - 
+	Sorting employees by salary:
+2019-03-17 15:02:29 INFO  root:16 - 	ITCompany
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+Developer { name='Cris', surname='Norman', salaryPerHour=42.0, level=MIDDLE, developerType=BACK_END, skill='Python'}
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Developer { name='Carroll', surname='Anderson', salaryPerHour=48.0, level=SENIOR, developerType=FRONT_END, skill='JavaScript'}
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'}
+	Team on project "Online-Store"
+manager = ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'},
+engineers = 
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+	Team on project "Game"
+manager = ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'},
+engineers = 
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+
+2019-03-17 15:02:29 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 15:02:29 INFO  root:11 - 	Sorting employees by surname and salary:
+2019-03-17 15:02:29 INFO  root:16 - 	ITCompany
+Developer { name='Carroll', surname='Anderson', salaryPerHour=48.0, level=SENIOR, developerType=FRONT_END, skill='JavaScript'}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Developer { name='Cris', surname='Norman', salaryPerHour=42.0, level=MIDDLE, developerType=BACK_END, skill='Python'}
+ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+	Team on project "Online-Store"
+manager = ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'},
+engineers = 
+Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}
+Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}
+Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}
+Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}
+	Team on project "Game"
+manager = ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'},
+engineers = 
+Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}
+Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}
+Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}
+Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}
+
+2019-03-17 15:02:29 INFO  root:11 - 	Find all employees by surname:
+2019-03-17 15:02:29 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 15:02:29 INFO  root:16 - [Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}, Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}]
+2019-03-17 15:02:29 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 15:02:30 INFO  root:11 - 	Max salary is: 60.0
+2019-03-17 15:02:30 INFO  root:11 - 	Employee with max salary is:
+2019-03-17 15:02:30 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 15:02:30 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 15:02:30 INFO  root:16 - ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'}
+2019-03-17 15:02:30 INFO  root:11 - 	Employee by type TESTER:
+2019-03-17 15:02:30 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 15:02:30 INFO  root:16 - [Tester { name='Hailey', surname='Conor', salaryPerHour=34.0, level=SENIOR, testerType=AUTOMATION}, Tester { name='Tom', surname='Gibbs', salaryPerHour=25.0, level=JUNIOR, testerType=MANUAL}, Tester { name='Alex', surname='Miller', salaryPerHour=30.0, level=MIDDLE, testerType=MANUAL}, Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, testerType=AUTOMATION}]
+2019-03-17 15:02:30 INFO  root:11 - 	Employee by type PROJECT_MANAGER:
+2019-03-17 15:02:30 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 15:02:30 INFO  root:16 - [ProjectManager { name='Scott', surname='Johnson', salaryPerHour=60.0, project='Online-Store'}, ProjectManager { name='Martin', surname='Thompson', salaryPerHour=51.0, project='Game'}]
+2019-03-17 15:02:30 INFO  root:11 - 	Employee by type DEVELOPER:
+2019-03-17 15:02:30 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 15:02:30 INFO  root:16 - [Developer { name='Carroll', surname='Anderson', salaryPerHour=48.0, level=SENIOR, developerType=FRONT_END, skill='JavaScript'}, Developer { name='John', surname='Conor', salaryPerHour=50.0, level=MIDDLE, developerType=BACK_END, skill='Java'}, Developer { name='Donald', surname='Freeman', salaryPerHour=46.0, level=MIDDLE, developerType=BACK_END, skill='C++'}, Developer { name='Jack', surname='Gilbert', salaryPerHour=52.0, level=SENIOR, developerType=FRONT_END, skill='HTML'}, Developer { name='Jack', surname='Harrison', salaryPerHour=32.0, level=JUNIOR, developerType=FRONT_END, skill='CSS'}, Developer { name='Cris', surname='Norman', salaryPerHour=42.0, level=MIDDLE, developerType=BACK_END, skill='Python'}]
+2019-03-17 16:16:34 INFO  root:33 - sorting by salary is successful
+2019-03-17 16:16:35 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 16:16:35 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 16:16:35 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 16:16:35 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 16:16:35 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 16:16:35 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 16:16:35 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 16:16:35 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 16:40:24 INFO  root:33 - sorting by salary is successful
+2019-03-17 16:40:24 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 16:40:24 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 16:40:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 16:40:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 16:40:24 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 16:40:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 16:40:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 16:40:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:08:40 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:08:40 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:08:40 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:08:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:08:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:08:40 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:08:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:08:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:08:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:09:56 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:09:56 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:09:56 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:09:56 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:09:56 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:09:56 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:09:56 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:09:56 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:09:56 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:10:40 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:10:40 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:10:40 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:10:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:10:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:10:40 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:10:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:10:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:10:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:11:32 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:11:32 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:11:32 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:11:32 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:11:32 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:11:32 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:11:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:11:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:11:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:20:12 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:20:12 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:20:12 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:20:12 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:20:12 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:20:12 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:20:12 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:20:12 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:20:12 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:07 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:23:07 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:23:07 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:23:07 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:23:07 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:23:07 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:23:07 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:07 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:07 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:32 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:23:32 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:23:32 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:23:32 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:23:32 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:23:32 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:23:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:23:32 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:24:24 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:24:24 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:24:24 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:24:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:24:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:24:24 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:24:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:24:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:24:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:25:37 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:25:37 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:25:37 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:25:37 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:25:37 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:25:37 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:25:37 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:25:37 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:25:37 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:26:24 INFO  root:33 - sorting by salary is successful
+2019-03-17 17:26:24 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 17:26:24 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 17:26:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:26:24 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 17:26:24 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful

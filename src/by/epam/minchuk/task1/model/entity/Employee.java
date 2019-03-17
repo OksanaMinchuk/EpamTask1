@@ -1,6 +1,7 @@
 package by.epam.minchuk.task1.model.entity;
 
 import by.epam.minchuk.task1.model.exception.logicexception.EmployeeDataWrongException;
+import by.epam.minchuk.task1.util.localizationConst.EmployeeConstant;
 
 /**
  * Class {@code Employee} is a superclass for all emloyees of IT-Company
@@ -98,8 +99,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return  " name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", salaryPerHour=" + salaryPerHour + ", ";
+        return EmployeeConstant.NAME + " '" + name + " \', "
+                + EmployeeConstant.SURNAME + " '" + surname + " \', "
+                + EmployeeConstant.SALARY_PER_HOUR + " " + salaryPerHour + ", ";
     }
 }

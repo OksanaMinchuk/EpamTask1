@@ -1,6 +1,6 @@
-package by.epam.minchuk.task1.model.collection.collectionImpl;
+package by.epam.minchuk.task1.util.collection.collectionImpl;
 
-import by.epam.minchuk.task1.model.collection.MyStack;
+import by.epam.minchuk.task1.util.collection.MyStack;
 
 public class MyLinkedListStack<E> extends MyLinkedList<E> implements MyStack<E> {
 

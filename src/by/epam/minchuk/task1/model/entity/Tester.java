@@ -61,7 +61,6 @@ public class Tester extends Engineer {
 
     @Override
     public String toString() {
-        return "Tester {" + super.toString() +
-                ", testerType=" + testerType + "}";
+        return "Tester {" + super.toString() + ", testerType=" + testerType + "}";
     }
 }
