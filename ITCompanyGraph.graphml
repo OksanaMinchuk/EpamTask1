@@ -287,8 +287,7 @@
           </y:NodeLabel>
           <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
             <y:AttributeLabel/>
-            <y:MethodLabel>+ printMessage(String message) ; void
-+ print(Object ob) : void</y:MethodLabel>
+            <y:MethodLabel>+ print(Object ob) : void</y:MethodLabel>
           </y:UML>
         </y:UMLClassNode>
       </data>

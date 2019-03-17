@@ -217,3 +217,12 @@ Tester { name='Oliver', surname='Watson', salaryPerHour=31.0, level=MIDDLE, test
 2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful
 2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful
 2019-03-17 17:26:24 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 18:09:40 INFO  root:33 - sorting by salary is successful
+2019-03-17 18:09:40 INFO  root:43 - sorting by surname and salary is successful
+2019-03-17 18:09:40 INFO  root:44 - method findAllEmployeeBySurname is successful
+2019-03-17 18:09:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 18:09:40 INFO  root:39 - method findMaxSalary is successful
+2019-03-17 18:09:40 INFO  root:41 - method findEmployeeByMaxSalary is successful
+2019-03-17 18:09:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 18:09:40 INFO  root:45 - method findEmployeeByType is successful
+2019-03-17 18:09:40 INFO  root:45 - method findEmployeeByType is successful

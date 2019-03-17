@@ -25,7 +25,7 @@ import java.util.Locale;
 
 public class MainController {
 
-    //private static final String INPUT_FILENAME = "inputData.txt";
+    //private static final String INPUT_FILENAME = "inputData.txt";p
 
     public static void main(String[] args) {
 
@@ -69,39 +69,39 @@ public class MainController {
             e.printStackTrace();
         }
 
-        printer.printMessage("\tAll employees in ITCompany:");
+        printer.print("\tAll employees in ITCompany:");
         printer.print(itCompany);
 
-        printer.printMessage("\tTeam 1 total price " + priceTeam1 + "$ per hour");
-        printer.printMessage("\tTeam 2 total price " + priceTeam2 + "$ per hour");
+        printer.print("\tTeam 1 total price " + priceTeam1 + "$ per hour");
+        printer.print("\tTeam 2 total price " + priceTeam2 + "$ per hour");
 
         try {
             Sorter.sortBySalary(itCompany);
-            printer.printMessage("\n\tSorting employees by salary:");
+            printer.print("\n\tSorting employees by salary:");
             printer.print(itCompany);
             Sorter.sortBySurnameAndSalary(itCompany);
-            printer.printMessage("\tSorting employees by surname and salary:");
+            printer.print("\tSorting employees by surname and salary:");
             printer.print(itCompany);
         } catch (SorterNullPointerException e) {
             e.printStackTrace();
         }
 
         try {
-            printer.printMessage("\tFind all employees by surname:");
+            printer.print("\tFind all employees by surname:");
             printer.print(FinderAllEmployeeBySurname.findAllEmployeeBySurname(itCompany, "Conor"));
 
-            printer.printMessage("\tMax salary is: " + FinderMaxSalary.findMaxSalary(itCompany));
+            printer.print("\tMax salary is: " + FinderMaxSalary.findMaxSalary(itCompany));
 
-            printer.printMessage("\tEmployee with max salary is:");
+            printer.print("\tEmployee with max salary is:");
             printer.print(FinderEmployeeByMaxSalary.findEmployeeByMaxSalary(itCompany, FinderMaxSalary.findMaxSalary(itCompany)));
 
-            printer.printMessage("\tEmployee by type TESTER:");
+            printer.print("\tEmployee by type TESTER:");
             printer.print(FinderEmployeeByType.findEmployeeByType(itCompany, Employee.EmployeeType.TESTER));
 
-            printer.printMessage("\tEmployee by type PROJECT_MANAGER:");
+            printer.print("\tEmployee by type PROJECT_MANAGER:");
             printer.print(FinderEmployeeByType.findEmployeeByType(itCompany, Employee.EmployeeType.PROJECTMANAGER));
 
-            printer.printMessage("\tEmployee by type DEVELOPER:");
+            printer.print("\tEmployee by type DEVELOPER:");
             printer.print(FinderEmployeeByType.findEmployeeByType(itCompany, Employee.EmployeeType.DEVELOPER));
         } catch (FinderNullPointerException e) {
             e.printStackTrace();

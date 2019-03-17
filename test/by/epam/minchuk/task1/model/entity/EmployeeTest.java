@@ -103,6 +103,4 @@ public class EmployeeTest {
         boolean result = firstEmployee.equals(secondEmployee);
         Assert.assertFalse(result);
     }
-
-
 }

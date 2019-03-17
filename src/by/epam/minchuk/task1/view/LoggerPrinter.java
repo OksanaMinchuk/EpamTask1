@@ -7,11 +7,6 @@ public class LoggerPrinter implements Printable {
     private static final Logger LOGGER = Logger.getRootLogger();
 
     @Override
-    public void printMessage(String message) {
-        LOGGER.info(message);
-    }
-
-    @Override
     public void print(Object ob) {
         LOGGER.info(ob);
     }
