@@ -174,7 +174,7 @@
             <y:AttributeLabel>- DEFAULT_LENGHT : int
 - lenght : int
 - employeesArray : Employee[]
-- teams : List&lt;Team&gt;</y:AttributeLabel>
+- teams : MyArrayList&lt;Team&gt;</y:AttributeLabel>
             <y:MethodLabel>+ addTeam(Team team) : void
 + removeTeam(Team team) : void
 + getTeamByIndex(int index) : Team
@@ -192,7 +192,7 @@
           <y:Geometry height="71.77426447835057" width="307.4999999999998" x="1212.201393324257" y="-229.62420406469067"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="126.92236328125" x="90.28881835937489" y="3.0">CompanyCreator<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="140.626953125" x="83.43652343749989" y="3.0">ITCompanyCreator<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -737,282 +737,6 @@
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
-          <y:Geometry height="159.84761606697958" width="213.5999999999999" x="1617.5772240472133" y="1319.0616992825478"/>
-          <y:Fill color="#CCFFFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="181.46142578125" x="16.069287109374955" y="3.0">&lt;&lt; MyCollection&lt;E&gt; &gt;&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ size() : int 
-+ isEmpty()  :  boolean 
-+ contains(Object o)  :  boolean 
-+ add(E e)  :  boolean 
-+ remove(Object o)  :  boolean 
-+ clear()  : void 
-</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n34">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="98.26656607091343" width="180.49643928299793" x="1764.716589782648" y="1563.2434888444807"/>
-          <y:Fill color="#CCFFFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="155.89306640625" x="12.301686438373963" y="3.0">&lt;&lt; MyQueue&lt;E&gt; &gt;&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ element() : E
-+ remove() : E
-+ poll() : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n35">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="98.26656607091343" width="171.94716228328662" x="1519.0729731658091" y="1563.2434888444807"/>
-          <y:Fill color="#CCFFFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="149.3994140625" x="11.273874110393308" y="3.0">&lt;&lt; MyStack&lt;E&gt; &gt;&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ push(E e) : void
-+ pop () : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n36">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="63.200000000000045" width="273.95833333333314" x="2456.899258228611" y="1142.5506251807672"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="243.88427734375" x="15.037027994791572" y="3.0">&lt;&lt; MyAbstractCollection&lt;E&gt; &gt;&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ isEmpty() : boolean </y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n37">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="282.535292491411" width="221.022232853059" x="2367.0603397595564" y="1297.49094557402"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="122.89794921875" x="49.0621418171545" y="3.0">MyArrayList&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel>- DEFAULT_CAPACITY : int
-- EMPTY_ELEMENTDATA : Object[]
-# elementData : Object[]
-# size : int</y:AttributeLabel>
-            <y:MethodLabel>+ get(int index) : E
-+ set(int index, E element) : E
-+ removeAt(int index) : boolean
-+ size() : int
-+ contains(Object o) : boolean
-+ add(E e) : boolean
-+ remove(Object o) : boolean
-+ clear() : void
-+ toArray(E[] array) : E[]
-
-+ equals(Object o) : boolean
-+ hashCode() : int
-+ toString() : String
-
-</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n38">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="101.43749999999994" width="201.1879102137284" x="2377.9371323349123" y="1666.524691957622"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="170.0927734375" x="15.5475683881142" y="3.0">MyArrayListQueue&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.0511997767857143" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ element() : E
-+ remove() : E
-+ poll() : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n39">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="95.36291171325163" width="171.94716228328662" x="2085.0966377019367" y="1672.5992802443702"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="163.59912109375" x="4.174020594768308" y="3.0">MyArrayListStack&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ push(E e) : void
-+ pop() : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n40">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="273.65292677742497" width="249.79071519702052" x="2623.9031263472875" y="1297.49094557402"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="131.53076171875" x="59.12997673913526" y="3.0">MyLinkedList&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ size() : int
-+ contains(Object o) : boolean
-+ add(E e) : boolean
-+ remove(Object o) : boolean
-+ clear() : void
-+ toArray(E[] array) : E[]
-
-+ equals(Object o) : boolean
-+ hashCode() : int
-+ toString() : String
-</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n41">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="101.43749999999994" width="201.1879102137284" x="2640.2466792610217" y="1666.524691957622"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="172.23193359375" x="14.4779883099892" y="3.0">MyLinkedListStack&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.0511997767857143" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ push(E e) : void
-+ pop() : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n42">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLClassNode>
-          <y:Geometry height="95.14085257040193" width="214.51145878470766" x="2920.5884793964897" y="1666.524691957622"/>
-          <y:Fill color="#FFCC00" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="178.7255859375" x="17.892936423603828" y="3.0">MyLinkedListQueue&lt;E&gt;<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
-            <y:AttributeLabel/>
-            <y:MethodLabel>+ element() : E
-+ remove() : E
-+ poll() : E
-+ peek() : E</y:MethodLabel>
-          </y:UML>
-        </y:UMLClassNode>
-      </data>
-    </node>
-    <node id="n43">
-      <data key="d4"/>
-      <data key="d6">
-        <y:UMLNoteNode>
-          <y:Geometry height="28.0" width="100.0" x="2853.1410560065833" y="1279.5596697889107"/>
-          <y:Fill color="#FF0000" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="17.96875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="39.4609375" x="30.26953125" y="5.015625">TODO<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-        </y:UMLNoteNode>
-      </data>
-    </node>
-    <node id="n44">
-      <data key="d4"/>
-      <data key="d5"/>
-      <data key="d6">
-        <y:UMLClassNode>
           <y:Geometry height="28.0" width="307.4999999999998" x="803.3892494845377" y="1130.8205451364554"/>
           <y:Fill color="#FFCC99" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
@@ -1030,9 +754,8 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n45">
+    <node id="n34">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="28.0" width="307.5" x="803.3892494845377" y="1178.9059193026822"/>
@@ -1052,9 +775,8 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n46">
+    <node id="n35">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="82.99999999999994" width="287.4982693608247" x="1016.6617849635632" y="-99.17174863079896"/>
@@ -1075,9 +797,8 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n47">
+    <node id="n36">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="71.77426447835057" width="287.49826936082457" x="817.190741466655" y="-229.62420406469067"/>
@@ -1098,9 +819,8 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n48">
+    <node id="n37">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="63.19107536494846" width="307.4999999999998" x="1637.443544968667" y="203.89352741187585"/>
@@ -1120,9 +840,8 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n49">
+    <node id="n38">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:UMLClassNode>
           <y:Geometry height="63.19107536494846" width="307.4999999999998" x="1637.443544968667" y="297.08460277682434"/>
@@ -1142,7 +861,7 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n50">
+    <node id="n39">
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
@@ -1163,7 +882,7 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n51">
+    <node id="n40">
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
@@ -1184,7 +903,7 @@
         </y:UMLClassNode>
       </data>
     </node>
-    <node id="n52">
+    <node id="n41">
       <data key="d4"/>
       <data key="d6">
         <y:UMLClassNode>
@@ -1393,182 +1112,19 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e15" source="n34" target="n33">
+    <edge id="e15" source="n6" target="n35">
       <data key="d8"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e16" source="n35" target="n33">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e17" source="n36" target="n33">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="1724.377224047213" y="1174.1506251807673"/>
-          </y:Path>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e18" source="n39" target="n35">
+    <edge id="e16" source="n5" target="n35">
       <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="2171.0702188435803" y="1898.162658920267"/>
-            <y:Point x="1605.0465543074524" y="1898.162658920267"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e19" source="n41" target="n35">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-51.21336958067877" ty="49.108414255774335">
-            <y:Point x="2740.8406343678857" y="1914.137208915311"/>
-            <y:Point x="1553.8331847267737" y="1914.137208915311"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e20" source="n38" target="n34">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="13.312326476210757" tx="0.0" ty="0.0">
-            <y:Point x="2478.5310874417764" y="1829.963886587616"/>
-            <y:Point x="1854.964809424147" y="1829.963886587616"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e21" source="n42" target="n34">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-46.54773894871255" ty="49.13021468502481">
-            <y:Point x="3027.8442087888434" y="1849.3940615869603"/>
-            <y:Point x="1808.4170704754345" y="1849.3940615869603"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e22" source="n37" target="n36">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="30.316746981423194" sy="-121.06183866030015" tx="-85.99022172776858" ty="31.609606006129297"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e23" source="n40" target="n36">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="-71.76593497498152" sy="-136.83243937323948" tx="83.15412407553845" ty="31.59316842504768"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e24" source="n39" target="n37">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-110.49340135655734" ty="107.70462890438911">
-            <y:Point x="2171.0702188435803" y="1546.4632207241148"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e25" source="n38" target="n37">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="141.26649095955838"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e26" source="n41" target="n40">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="-8.374316696302564" ty="137.213490686588"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e27" source="n42" target="n40">
-      <data key="d8"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="111.02148738658025" ty="111.23792164729883">
-            <y:Point x="3027.8442087888434" y="1545.5553306100314"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e28" source="n6" target="n46">
-      <data key="d8"/>
-      <data key="d9"/>
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="dashed" width="1.0"/>
-          <y:Arrows source="none" target="white_delta"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e29" source="n5" target="n46">
-      <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1580,9 +1136,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e30" source="n5" target="n1">
+    <edge id="e17" source="n5" target="n1">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-36.50277630297876" ty="-24.72644669726759">
@@ -1594,9 +1149,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e31" source="n6" target="n5">
+    <edge id="e18" source="n6" target="n5">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1606,9 +1160,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e32" source="n6" target="n0">
+    <edge id="e19" source="n6" target="n0">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="19.06878916992855" ty="-34.10991041505116">
@@ -1620,9 +1173,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e33" source="n47" target="n5">
+    <edge id="e20" source="n36" target="n5">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="35.894133714432996" tx="-4.15446231752594" ty="-16.039197740643658"/>
@@ -1632,9 +1184,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e34" source="n7" target="n6">
+    <edge id="e21" source="n7" target="n6">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1644,9 +1195,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e35" source="n8" target="n47">
+    <edge id="e22" source="n8" target="n36">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-7.354157106917455" sy="1.0199738588430591" tx="0.0" ty="0.0">
@@ -1659,9 +1209,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e36" source="n9" target="n48">
+    <edge id="e23" source="n9" target="n37">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-2.1672949725279977" sy="17.05772061668094" tx="0.0" ty="0.0">
@@ -1674,9 +1223,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e37" source="n9" target="n49">
+    <edge id="e24" source="n9" target="n38">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -1689,9 +1237,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e38" source="n8" target="n9">
+    <edge id="e25" source="n8" target="n9">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -1701,9 +1248,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e39" source="n8" target="n52">
+    <edge id="e26" source="n8" target="n41">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="10.115841624322002" sy="10.233958249222837" tx="0.0" ty="0.0">
@@ -1716,9 +1262,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e40" source="n8" target="n51">
+    <edge id="e27" source="n8" target="n40">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="71.7319062098004" sy="22.04636305130782" tx="0.0" ty="0.0">
@@ -1731,9 +1276,8 @@
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e41" source="n8" target="n50">
+    <edge id="e28" source="n8" target="n39">
       <data key="d8"/>
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="75.57957393396441" sy="34.58206139809414" tx="0.0" ty="0.0">

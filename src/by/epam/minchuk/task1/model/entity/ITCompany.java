@@ -3,6 +3,8 @@ package by.epam.minchuk.task1.model.entity;
 import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.EmployableNullPointerExeption;
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
+import by.epam.minchuk.task1.util.collection.MyCollection;
+import by.epam.minchuk.task1.util.collection.collectionImpl.MyArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,21 +22,23 @@ public class ITCompany implements Employable {
     private static final int DEFAULT_LENGHT = 0;
     private int lenght;
     private Employee[] employeesArray;
-    private List<Team> teams;
+    private MyArrayList<Team> teams;
 
     public ITCompany() {
         lenght = DEFAULT_LENGHT;
         employeesArray = new Employee[lenght];
-        teams = new ArrayList<>();
+        teams = new MyArrayList<>();
     }
 
-    public ITCompany(Employee[] employeesArray, List<Team> teams) {
+    public ITCompany(Employee[] employeesArray, MyArrayList<Team> teams) {
         this.employeesArray = employeesArray;
         this.teams = teams;
     }
 
     public ITCompany(ITCompany itCompany) {
-        this.employeesArray = itCompany.employeesArray.clone();
+        for (int i = 0; i < employeesArray.length; i++) {
+            this.employeesArray[i] = itCompany.employeesArray[i];
+        }
         for (int i = 0; i < teams.size(); i++ ) {
             this.teams.add(itCompany.teams.get(i));
         }
@@ -159,8 +163,8 @@ public class ITCompany implements Employable {
         for (Employee employee : employeesArray) {
             builder.append(employee).append("\n");
         }
-        for (Team team : teams) {
-            builder.append(team);
+        for (int i = 0; i < teams.size(); i++) {
+            builder.append(teams.get(i));
         }
         return builder.toString();
     }

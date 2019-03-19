@@ -1,6 +1,7 @@
 package by.epam.minchuk.task1.model.entity;
 
 import by.epam.minchuk.task1.model.exception.logicexception.EngineerDataWrongException;
+import by.epam.minchuk.task1.util.localizationConst.Constant;
 
 /**
  * Class {@code Engineer} is a subclass of Employee and a superclass for Developer and Tester
@@ -61,6 +62,6 @@ public class Engineer extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + "level=" + level;
+        return super.toString() + Constant.LEVEL + " = " + level;
     }
 }

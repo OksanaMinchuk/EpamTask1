@@ -4,11 +4,11 @@ import java.io.*;
 
 public class FilePrinter implements Printable {
 
-    private File fbyte = new File("outputDataByte.data");
-    private File fsymb = new File("outputDataSymbol.data");
+    private File fbyte = new File("outputDataByte.bin");
+    private File fsymb = new File("outputDataSymbol.txt");
 
-    private FileOutputStream fileOutputStream = null;
-    private FileWriter fileWriter = null;
+    //private FileOutputStream fileOutputStream = null;
+    //private FileWriter fileWriter = null;
 
     @Override
     public void print(Object ob) {
@@ -22,5 +22,4 @@ public class FilePrinter implements Printable {
             e.printStackTrace();
         }
     }
-
 }

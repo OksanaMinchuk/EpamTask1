@@ -1,8 +1,6 @@
 package by.epam.minchuk.task1.util;
 
-import by.epam.minchuk.task1.model.entity.ITCompany;
-import by.epam.minchuk.task1.model.entity.ProjectManager;
-import by.epam.minchuk.task1.model.entity.Team;
+import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.CompanyCreatorNullPointerException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.EmployableNullPointerExeption;
@@ -19,13 +17,13 @@ public class TeamCreator {
 
     public Team createTeamOne (ITCompany itCompany) throws CompanyCreatorNullPointerException {
         if (itCompany != null) {
-            Team itTeam = new Team();
+            Team team = new Team();
             try {
-                itTeam.setManager((ProjectManager) itCompany.getEmployee(10));
-                itTeam.addWorker(itCompany.getEmployee(0));
-                itTeam.addWorker(itCompany.getEmployee(3));
-                itTeam.addWorker(itCompany.getEmployee(6));
-                itTeam.addWorker(itCompany.getEmployee(8));
+                team.setManager((ProjectManager) itCompany.getEmployee(10));
+                team.addWorker(itCompany.getEmployee(0));
+                team.addWorker(itCompany.getEmployee(3));
+                team.addWorker(itCompany.getEmployee(6));
+                team.addWorker(itCompany.getEmployee(8));
             } catch (ITCompanyDataWrongException e) {
                 e.printStackTrace();
             } catch (EmployableNullPointerExeption employableNullPointerExeption) {
@@ -33,20 +31,20 @@ public class TeamCreator {
             } catch (TeamNullPointerException e) {
                 e.printStackTrace();
             }
-            return itTeam;
+            return team;
         } else {
             throw new CompanyCreatorNullPointerException("Invoking a method for a null object");
         }
     }
     public Team createTeamTwo (ITCompany itCompany) throws CompanyCreatorNullPointerException {
         if (itCompany != null) {
-            Team itTeam = new Team();
+            Team team = new Team();
             try {
-                itTeam.setManager((ProjectManager) itCompany.getEmployee(11));
-                itTeam.addWorker(itCompany.getEmployee(1));
-                itTeam.addWorker(itCompany.getEmployee(4));
-                itTeam.addWorker(itCompany.getEmployee(7));
-                itTeam.addWorker(itCompany.getEmployee(9));
+                team.setManager((ProjectManager) itCompany.getEmployee(11));
+                team.addWorker(itCompany.getEmployee(1));
+                team.addWorker(itCompany.getEmployee(4));
+                team.addWorker(itCompany.getEmployee(7));
+                team.addWorker(itCompany.getEmployee(9));
             } catch (ITCompanyDataWrongException e) {
                 e.printStackTrace();
             } catch (EmployableNullPointerExeption employableNullPointerExeption) {
@@ -54,7 +52,7 @@ public class TeamCreator {
             } catch (TeamNullPointerException e) {
                 e.printStackTrace();
             }
-            return itTeam;
+            return team;
         } else {
             throw new CompanyCreatorNullPointerException("Invoking a method for a null object");
         }

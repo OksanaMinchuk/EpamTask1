@@ -1,6 +1,7 @@
 package by.epam.minchuk.task1.model.entity;
 
 import by.epam.minchuk.task1.model.exception.logicexception.DeveloperDataWrongException;
+import by.epam.minchuk.task1.util.localizationConst.Constant;
 
 /**
  * Class {@code Developer} is a subclass of Engineer
@@ -89,9 +90,8 @@ public class Developer extends Engineer {
 
     @Override
     public String toString() {
-        return "Developer {" + super.toString() +
-                ", developerType=" + developerType +
-                ", skill='" + skill + '\''
-                 + "}";
+        return Constant.DEVELOPER + " {" + super.toString()
+                + ", " + Constant.DEVELOPER_TYPE + " = " + developerType
+                + ", " + Constant.SKILL +  " ='" + skill + '\'' + "}";
     }
 }

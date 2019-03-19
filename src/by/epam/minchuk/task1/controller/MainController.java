@@ -6,13 +6,14 @@ import by.epam.minchuk.task1.model.exception.technicalexeption.FinderNullPointer
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
 import by.epam.minchuk.task1.model.logic.*;
-import by.epam.minchuk.task1.util.CompanyCreator;
+import by.epam.minchuk.task1.util.ITCompanyCreator;
 import by.epam.minchuk.task1.model.exception.technicalexeption.CompanyCreatorNullPointerException;
 import by.epam.minchuk.task1.util.TeamCreator;
-import by.epam.minchuk.task1.util.localizationConst.EmployeeConstant;
+import by.epam.minchuk.task1.util.localizationConst.Constant;
 import by.epam.minchuk.task1.view.Printable;
 import by.epam.minchuk.task1.view.printercreator.PrinterCreator;
 import by.epam.minchuk.task1.view.exception.PrinterEnumConstantNotPresentException;
+import org.apache.log4j.Logger;
 
 import java.util.Locale;
 
@@ -25,15 +26,27 @@ import java.util.Locale;
 
 public class MainController {
 
-    //private static final String INPUT_FILENAME = "inputData.txt";p
+    private static final Logger LOGGER;
+
+    static {
+        LOGGER = Logger.getRootLogger();
+    }
 
     public static void main(String[] args) {
 
-        Locale locale  = new Locale("en", "UK");
+        //Locale locale  = new Locale("en", "UK");
         //Locale locale  = new Locale("de", "DE");
-        EmployeeConstant.changeLocale(locale);
+        Locale locale  = new Locale("ru", "RU");
+        Constant.changeLocale(locale);
 
-        CompanyCreator companyCreator = new CompanyCreator();
+        Printable printer = null;
+        try {
+            printer = PrinterCreator.getPrinter(PrinterCreator.PrinterType.FILE);
+        } catch (PrinterEnumConstantNotPresentException e) {
+            e.printStackTrace();
+        }
+
+        ITCompanyCreator companyCreator = new ITCompanyCreator();
         TeamCreator teamCreator = new TeamCreator();
         ITCompany itCompany = new ITCompany();
 
@@ -42,6 +55,7 @@ public class MainController {
             itCompany.setEmployeesArray(employees);
         } catch (ITCompanyNullPointerException e) {
             e.printStackTrace();
+            LOGGER.error("exception ", e);
         }
 
         Team team1 = null;
@@ -51,23 +65,17 @@ public class MainController {
             team2 = teamCreator.createTeamTwo(itCompany);
             itCompany.addTeam(team1);
             itCompany.addTeam(team2);
+            LOGGER.info("teams added");
         } catch (ITCompanyNullPointerException e) {
+            LOGGER.error("exception ", e);
             e.printStackTrace();
         } catch (CompanyCreatorNullPointerException e) {
+            LOGGER.error("exception ", e);
             e.printStackTrace();
         }
 
         double priceTeam1 = team1.getTeamPrice();
         double priceTeam2 = team2.getTeamPrice();
-
-        Printable printer = null;
-
-        try {
-            printer = PrinterCreator.getPrinter(PrinterCreator.PrinterType.CONSOLE);
-            //printer = PrinterCreator.getPrinter(PrinterCreator.PrinterType.LOGGER);
-        } catch (PrinterEnumConstantNotPresentException e) {
-            e.printStackTrace();
-        }
 
         printer.print("\tAll employees in ITCompany:");
         printer.print(itCompany);
@@ -83,6 +91,7 @@ public class MainController {
             printer.print("\tSorting employees by surname and salary:");
             printer.print(itCompany);
         } catch (SorterNullPointerException e) {
+            LOGGER.error("exception ", e);
             e.printStackTrace();
         }
 
@@ -104,10 +113,12 @@ public class MainController {
             printer.print("\tEmployee by type DEVELOPER:");
             printer.print(FinderEmployeeByType.findEmployeeByType(itCompany, Employee.EmployeeType.DEVELOPER));
         } catch (FinderNullPointerException e) {
+            LOGGER.error("exception ", e);
             e.printStackTrace();
         } catch (FinderEmployeeNotFoundException e) {
+            LOGGER.error("exception ", e);
             e.printStackTrace();
         }
-
+        LOGGER.info("the end");
     }
 }

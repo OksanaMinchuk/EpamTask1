@@ -32,7 +32,8 @@ public class Sorter {
             Arrays.sort(itCompany.getEmployeesArray(), comparator);
             LOGGER.info("sorting by salary is successful");
         } else {
-            throw new SorterNullPointerException("Invoking a method \"sortBySalary\" for a null object, employees cannot be null");
+            LOGGER.error("method throws exception");
+            throw new SorterNullPointerException("Invoking a method \"sortBySalary\" for a null object");
         }
     }
 
@@ -42,7 +43,8 @@ public class Sorter {
             Arrays.sort(itCompany.getEmployeesArray(), comparator.thenComparing(new ComparatorSalary()));
             LOGGER.info("sorting by surname and salary is successful");
         } else {
-            throw new SorterNullPointerException("Invoking a method \"sortBySurnameAndSalary\" for a null object, employees cannot be null");
+            LOGGER.error("method throws exception");
+            throw new SorterNullPointerException("Invoking a method \"sortBySurnameAndSalary\" for a null object");
         }
     }
 }
