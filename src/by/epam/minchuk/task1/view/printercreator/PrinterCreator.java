@@ -14,8 +14,8 @@ public class PrinterCreator {
     }
 
     public static Printable getPrinter(PrinterType printerType) throws PrinterEnumConstantNotPresentException {
-        Printable printer;
-            try {
+        Printable printer = new ConsolePrinter();
+
                 switch (printerType) {
                     case FILE:
                         printer = new FilePrinter();
@@ -23,15 +23,8 @@ public class PrinterCreator {
                     case LOGGER:
                         printer = new LoggerPrinter();
                         break;
-                    case CONSOLE:
-                        printer = new ConsolePrinter();
-                        break;
-                    default:
-                        throw new EnumConstantNotPresentException(PrinterType.class, printerType.toString());
                 }
-            } catch (EnumConstantNotPresentException e) {
-                throw new PrinterEnumConstantNotPresentException("Incorrect value in switch", e);
-            }
+
         return printer;
     }
 }

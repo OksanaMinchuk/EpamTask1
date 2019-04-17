@@ -3,12 +3,9 @@ package by.epam.minchuk.task1.model.entity;
 import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.EmployableNullPointerExeption;
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
-import by.epam.minchuk.task1.util.collection.MyCollection;
 import by.epam.minchuk.task1.util.collection.collectionImpl.MyArrayList;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Class {@code ITCompany}
@@ -36,6 +33,8 @@ public class ITCompany implements Employable {
     }
 
     public ITCompany(ITCompany itCompany) {
+        employeesArray = new Employee[lenght];
+        teams = new MyArrayList<>();
         for (int i = 0; i < employeesArray.length; i++) {
             this.employeesArray[i] = itCompany.employeesArray[i];
         }

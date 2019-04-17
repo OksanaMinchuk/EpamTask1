@@ -6,9 +6,9 @@ import by.epam.minchuk.task1.model.exception.technicalexeption.FinderNullPointer
 import by.epam.minchuk.task1.model.exception.technicalexeption.ITCompanyNullPointerException;
 import by.epam.minchuk.task1.model.exception.technicalexeption.SorterNullPointerException;
 import by.epam.minchuk.task1.model.logic.*;
-import by.epam.minchuk.task1.util.ITCompanyCreator;
+import by.epam.minchuk.task1.util.creator.ITCompanyCreator;
 import by.epam.minchuk.task1.model.exception.technicalexeption.CompanyCreatorNullPointerException;
-import by.epam.minchuk.task1.util.TeamCreator;
+import by.epam.minchuk.task1.util.creator.TeamCreator;
 import by.epam.minchuk.task1.util.localizationConst.Constant;
 import by.epam.minchuk.task1.view.Printable;
 import by.epam.minchuk.task1.view.printercreator.PrinterCreator;
@@ -34,16 +34,18 @@ public class MainController {
 
     public static void main(String[] args) {
 
-        //Locale locale  = new Locale("en", "UK");
+        Locale locale  = new Locale("en", "UK");
         //Locale locale  = new Locale("de", "DE");
-        Locale locale  = new Locale("ru", "RU");
+        //Locale locale  = new Locale("ru", "RU");
         Constant.changeLocale(locale);
 
         Printable printer = null;
         try {
-            printer = PrinterCreator.getPrinter(PrinterCreator.PrinterType.FILE);
+            printer = PrinterCreator.getPrinter(PrinterCreator.PrinterType.CONSOLE);
+            LOGGER.info("printer created ");
         } catch (PrinterEnumConstantNotPresentException e) {
             e.printStackTrace();
+            LOGGER.error("exception ", e);
         }
 
         ITCompanyCreator companyCreator = new ITCompanyCreator();

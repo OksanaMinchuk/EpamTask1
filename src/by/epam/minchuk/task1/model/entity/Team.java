@@ -30,6 +30,7 @@ public class Team implements Employable {
 
     public Team(Team team) {
         this.manager = team.manager;
+        engineers = new Engineer[DEFAULT_LENGHT];
         for (int i = 0; i < engineers.length; i++) {
             this.engineers[i] = team.engineers[i];
         }

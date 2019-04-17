@@ -21,11 +21,18 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
         }
     }
 
+    /**
+     * Returns the element at the specified position in this list
+     *
+     * @param index
+     * @return the element at the specified position in this list
+     */
     public E get(int index){
         if (index >= 0 && index < size) {
             return (E) elementData[index];
+        }  else {
+            throw new IndexOutOfBoundsException("The index is out of range " + index);
         }
-        return null; //TODO throw exception
     }
 
 
@@ -43,20 +50,39 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
             E oldValue = (E) elementData[index];
             elementData[index] = element;
             return oldValue;
+        } else {
+            throw new IndexOutOfBoundsException("The index is out of range " + index);
         }
-        return null;  //TODO throw exception
     }
 
+    /**
+     * Removes the element at the specified position in this list.
+     * Shifts any subsequent elements to the left (subtracts one from their indices).
+     *
+     * @param index
+     * @return true if this list contained the element with this index
+     */
     public boolean removeAt(int index) { //TODO throw exception
-        boolean result = false;
         if (index >= 0 && index < size) {
-            for (int i = index; i < size; i++) {
-                elementData[i] = elementData[i + 1];
+            int capasity = elementData.length;
+            Object[] newArray = new Object[capasity - 1];
+            if (index == capasity - 1) {
+                for (int i = 0; i < capasity - 1; i++) {
+                    newArray[i] = elementData[i];
+                }
+            } else {
+                for (int i = 0, j = 0; i < capasity - 1; i++, j++) {
+                    if (j == index) {
+                        j++;
+                    }
+                    newArray[i] = elementData[j];
+                }
             }
-            elementData[--size] = null;
-            result = true;
+            elementData = newArray;
+            return true;
+        } else {
+            throw new IndexOutOfBoundsException("The index is out of range " + index);
         }
-        return result;
     }
 
     @Override
@@ -64,8 +90,17 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
         return size;
     }
 
+    /**
+     * Returns true if this list contains the specified element.
+     * More formally, returns true if and only if this list contains at least
+     * one element e such that (o==null ? e==null : o.equals(e)).
+     *
+     * @param o element whose presence in this collection is to be tested
+     * @return true if this list contains the specified element
+     *
+     */
     @Override
-    public boolean contains(Object o) { //TODO throw exception
+    public boolean contains(Object o) {
         boolean result = false;
         if (o != null) {
             for (Object elem: elementData) {
@@ -78,8 +113,14 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
         return result;
     }
 
+    /**
+     * Appends the specified element to the end of this list.
+     *
+     * @param e element whose presence in this collection is to be ensured
+     * @return true is element had been added
+     */
     @Override
-    public boolean add(E e) { //TODO throw exception
+    public boolean add(E e) {
         if (e != null) {
             if (size == elementData.length) {
                 elementData = Arrays.copyOf(elementData, size + 1);
@@ -90,8 +131,15 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
         return false;
     }
 
+    /**
+     * Removes the first occurrence of the specified element from this list, if it is present.
+     * If the list does not contain the element, it is unchanged
+     *
+     * @param o element to be removed from this collection, if present
+     * @return true if this list contained the specified element
+     */
     @Override
-    public boolean remove(Object o) { //TODO throw exception
+    public boolean remove(Object o) {
         boolean result = false;
         if (o != null) {
             for (int i = 0; i <elementData.length; i++) {
@@ -104,6 +152,9 @@ public class MyArrayList<E> extends MyAbstractCollection<E> {
         return result;
     }
 
+    /**
+     * Removes all of the elements from this list. The list will be empty after this call returns.
+     */
     @Override
     public void clear() {
         elementData = new Object[0];

@@ -1,4 +1,4 @@
-package by.epam.minchuk.task1.util;
+package by.epam.minchuk.task1.util.creator;
 
 import by.epam.minchuk.task1.model.entity.*;
 import by.epam.minchuk.task1.model.exception.logicexception.ITCompanyDataWrongException;

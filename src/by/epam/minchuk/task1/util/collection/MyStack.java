@@ -17,7 +17,7 @@ public interface MyStack<E> extends MyCollection<E> {
      *
      * @return the element at the front (which is the top of the stack)
      */
-    E pop();
+    E pop() throws MyCollectionException;
 
     /**
      * Retrieves, but does not remove, the head of the stack.
@@ -25,10 +25,6 @@ public interface MyStack<E> extends MyCollection<E> {
      * @return the head of the stack
      * returns {@code null} if this queue is stack
      */
-    E peek();
-
-
-
-
+    E peek() throws MyCollectionException;
 
 }

@@ -36,12 +36,15 @@ public class FinderAllEmployeeBySurname {
         if (itCompany != null && surnameValue != null) {
             Employee[] employees = itCompany.getEmployeesArray();
             List<Employee> findEmployees = new ArrayList<>();
+
             for (int i = 0; i < employees.length; i++) {
                 if (employees[i].getSurname().equals(surnameValue)) {
                     findEmployees.add(employees[i]);
                 }
             }
+
             LOGGER.info("method findAllEmployeeBySurname is successful");
+
             if (findEmployees.isEmpty()) {
                 throw new FinderEmployeeNotFoundException("Employee by surname " + surnameValue + " not found");
             }

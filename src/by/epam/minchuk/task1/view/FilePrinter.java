@@ -12,8 +12,8 @@ public class FilePrinter implements Printable {
 
     @Override
     public void print(Object ob) {
-        try (FileOutputStream fileOutputStream = new FileOutputStream(fbyte);
-             FileWriter fileWriter = new FileWriter(fsymb)) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(fbyte, true);
+             FileWriter fileWriter = new FileWriter(fsymb, true)) {
             fileOutputStream.write(ob.toString().getBytes());
             fileWriter.write(ob.toString());
         } catch (FileNotFoundException e) {
