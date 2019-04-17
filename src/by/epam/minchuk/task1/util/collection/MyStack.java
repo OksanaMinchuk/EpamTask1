@@ -23,7 +23,7 @@ public interface MyStack<E> extends MyCollection<E> {
      * Retrieves, but does not remove, the head of the stack.
      *
      * @return the head of the stack
-     * returns {@code null} if this queue is stack
+     *
      */
     E peek() throws MyCollectionException;
 
