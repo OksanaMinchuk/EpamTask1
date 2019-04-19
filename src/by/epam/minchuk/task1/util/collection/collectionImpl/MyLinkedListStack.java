@@ -9,7 +9,7 @@ public class MyLinkedListStack<E> extends MyLinkedList<E> implements MyStack<E> 
 
     /**
      * Pushes an item onto the top of this stack
-     * 
+     *
      * @param e the item argument
      */
     @Override
